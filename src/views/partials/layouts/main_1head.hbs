@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{!-- "utf-8" "viewport" --}}
+		<meta charset="utf-8">
+		<meta	name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		{{! "author" "description" }}
+		<meta name="author" 
+			content="JCC Producciones - Julio Cesar Corbaz - julio.corbaz@gmail.com"
+		/>
+		<meta name="description" 
+			content="Avalith - NodeJS BE challenge 2020 - Sistema de Votación"
+		/>
+		{{! "ie=edge"}}
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		
+		<title>{{title}}</title>
+
+		<!-- Favicon-->
+		<link 
+			rel="icon" 
+			type="image/x-icon" 
+			href="img/favicon.ico" />
+
+		<!-- Fuentes (Fonts) - font-awesome -->
+		<link 
+			rel="stylesheet"
+			type="text/css" 
+			href="fonts/font-awesome.min.css" />
+
+		<!-- CSS - Bootstrap Original 4.4.1 -->
+		<!-- Bootswatch
+					<link
+						href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cerulean/bootstrap.min.css"
+						rel="stylesheet"
+						integrity="sha384-LV/SIoc08vbV9CCeAwiz7RJZMI5YntsH8rGov0Y2nysmepqMWVvJqds6y0RaxIXT"
+						crossorigin="anonymous" />
+				
+		<link rel="stylesheet" href="/css/bootstrap.min.css" />-->
+		 <link 
+		 	rel="stylesheet" 
+			type="text/css"
+			href="css/bootstrap/bootstrap.css" /> 
+	<!--	<link rel="stylesheet" href="css/master.css" />-->
+		
+		<!-- styles.css - Estilos Propios -->
+		<link 
+			rel="stylesheet" 
+			type="text/css"
+			href="css/estilos.css" />
+
+	</head>
+	<body id="top" class="my_body">
+	  {{>componentes/my_chat}}
+	  {{>componentes/my_scroll}}

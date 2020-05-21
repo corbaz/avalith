@@ -1,0 +1,99 @@
+<div class="card text-center">
+  <div class="card-header">
+    <h3 class="m-0 tinta">
+      {{title}}
+    </h3>
+  </div>
+  <div class="table-wrapper-scroll-y my-scrollbar">
+    <table class="table table-bordered table-striped mb-0">
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <div class="card-body intro-text tinta p-3">
+            <div class="accordion" id="accordionExample">
+              {{#each registros}}
+                <div class="card text-center">
+                  <div class="card-header intro-text tinta p-0" id="headingOne">
+                    <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col col-2 p-1 align-self-center text-center tinta">
+                          {{! Se Hace x POST el DELETE (method-override) }}
+                          <form
+                            method="POST"
+                            action="/employee/baja/{{_id}}?_method=DELETE"
+                            enctype="application/x-www-form-urlencoded"
+                          >
+                            <input
+                              type="hidden"
+                              name="_method"
+                              value="DELETE"
+                            />
+                            <button class="btn tinta" type="submit">
+                              <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                          </form>
+                        </div>
+                        <div class="col col-6 p-0 align-self-center text-center tinta">
+                            {{employee_apellido}}
+                            {{employee_nombre}}
+                        </div>
+                        <div class="col col-2 p-0 align-self-center text-center tinta">
+                          {{! POST - Modificacion - Primero Consulta y Luego Update}}
+                          <form
+                            method="POST"
+                            action="/employee/consulta/{{_id}}"
+                            enctype="application/x-www-form-urlencoded"
+                          >
+                            <button class="btn tinta" type="submit">
+                              <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
+                          </form>
+                        </div>
+                        <div class="col col-2 p-0 align-self-center text-center tinta">
+                          <button
+                            class="btn btn-link tinta"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapse{{@index}}"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                          >
+                            <i
+                              class="fa fa-chevron-down"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="collapse{{@index}}"
+                    class="collapse"
+                    aria-labelledby="headingOne"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body papel text-white p-2 text-center">
+                        EMAIL:
+                        {{employee_email}}
+                      <br>
+                        PASSWORD:
+                        {{employee_pass}}
+                      <br>
+                        AREA:
+                        {{employee_area}}
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+      </tbody>
+    </table>
+  </div>
+  {{>employee/employee_footer}}
+</div>
+  

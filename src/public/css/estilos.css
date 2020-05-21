@@ -1,0 +1,326 @@
+html {
+  height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.my_body {
+  background-color: transparent !important;
+  background-image: url("/img/bg-masthead.jpg") !important;
+  color: #ffffff !important;
+  text-align: left;
+  position: absoluta;
+  display: block;
+  /* display: flex;*/
+  top: 0;
+  margin: 0;
+  padding: 0;
+  /* overflow: auto; */
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  /* height: 100%; */
+  height: 100vh;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+}
+
+body > a {
+  text-decoration: none;
+}
+
+#chat {
+  box-sizing: content-box;
+  box-shadow: none;
+  border-radius: 0px !important;
+  border: 0;
+  bottom: 80px !important;
+  right: 20px !important;
+  width: 69px;
+  height: 48px !important;
+  background: url(/icons/chat.png) center center;
+  background-position: cover;
+  background-repeat: no-repeat;
+  transform: scale(0.9);
+  transition: .3s;
+  position: fixed;
+  z-index: 10001;
+}
+
+#chat:hover {
+  transform: scale(1);
+}
+
+a.scroll-top {
+  background: transparent !important;
+  color: #42dca3 !important;
+  display: none;
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  z-index: 10000;
+  bottom: 3px;
+  transform: scale(0.8);
+  transition: .3s;
+  right: 30px;
+  font-size: 24px;
+  border-radius: 3px !important;
+  text-align: center;
+  border: 0px solid rgba(199, 199, 199, 0.3);
+}
+
+a.scroll-top:hover {
+  transform: scale(1);
+}
+
+#my_nav {
+  height: 60px;
+  background-color: transparent !important;
+  font-size: 14px;
+}
+
+#my_brand {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+#my_brand:hover {
+  color: #42dca3 !important;
+  font-weight: 700;
+}
+
+#my_boton_menu {
+  background-color: #42dca3 !important;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+  border: solid 2px #42dca3 !important;
+}
+
+#my_boton_menu span {
+  background-color: #42dca3 !important;
+}
+
+a.nav-link,
+li.nav-item {
+  background-color: transparent !important;
+  min-width: min-content;
+  max-width: max-content;
+  margin-left: auto;
+  padding: 2px;
+  border: 0px solid #007bff;
+}
+
+kbd {
+  font-size: 14px;
+}
+
+.kbd {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.kbd:hover {
+  background-color: #42dca3 !important;
+  color: #ffffff !important;
+}
+
+.menu_kbd {
+  background-color: #663399 !important;
+  color: #ffffff !important;
+}
+
+.menu_kbd:hover {
+  background-color: #42dca3 !important;
+  color: #ffffff !important;
+}
+
+#menu_employee {
+  text-align: left;
+  background-color: #663399 !important;
+  color: #ffffff !important;
+}
+
+.dropdown-toggle::before,
+.dropdown-toggle::after {
+  color: #663399 !important;
+}
+
+.dropdown-toggle:hover::before,
+.dropdown-toggle:hover::after {
+  color: #42dca3 !important;
+}
+
+.dropdown-menu {
+  padding: 0px;
+  border: 0px;
+}
+
+.dropdown-item:hover {
+  background-color: transparent !important;
+}
+
+.dropdown-menu.show,
+.dropdown-item {
+  background-color: transparent !important;
+  min-width: min-content;
+  max-width: max-content;
+  margin-left: auto;
+  border: 0px solid #42dca3 !important;
+  padding: 2px;
+}
+
+.sub_menu_kbd {
+  background-color: #663399 !important;
+  color: #ffffff !important;
+}
+
+.sub_menu_kbd:hover {
+  background-color: #42dca3 !important;
+  color: #ffffff !important;
+}
+
+.my_main {
+  margin-left: 0;
+  margin-top: 0;
+  padding: 80px 20px 20px 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.my_footer_empresa {
+  background-color: transparent !important;
+  margin: 0 auto;
+  padding: 5px;
+  width: 100%;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  display: inline-block !important;
+}
+
+.my_footer_empresa > a,
+.socialIcons > a {
+  margin: 0 10 !important;
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+.my_footer_empresa > a:hover,
+.socialIcons > a:hover {
+  margin: 0 10 !important;
+  text-decoration: none;
+  color: #42dca3 !important;
+}
+
+.contenedor_presentacion {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  margin-top: 150px;
+  background: rgba(253, 87, 87, 0.5) !important;
+  transform: rotate(-30deg) skew(25deg) scale(0.8);
+  transition: 0.5s;
+}
+
+.contenedor_presentacion img {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: -240px;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.contenedor_presentacion:hover img:nth-child(4) {
+  transform: translate(160px, -160px);
+  opacity: 1;
+}
+
+.contenedor_presentacion:hover img:nth-child(3) {
+  transform: translate(120px, -120px);
+  opacity: 0.8;
+}
+
+.contenedor_presentacion:hover img:nth-child(2) {
+  transform: translate(80px, -80px);
+  opacity: 0.6;
+}
+
+.contenedor_presentacion:hover img:nth-child(1) {
+  transform: translate(40px, -40px);
+  opacity: 0.4;
+}
+
+.titulos {
+  font-family: "Cabin", sans-serif;
+  font-size: 18px;
+  color: var(--violeta);
+  background-color: var(--naranja);
+  /* font-family: 'Cabin Condensed', sans-serif; */
+  font-weight: 700;
+  margin: 0px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.titulos-blancos {
+  font-family: "Cabin", sans-serif;
+  font-size: 12px;
+  color: var(--blanco);
+  background-color: var(--naranja);
+  /* font-family: 'Cabin Condensed', sans-serif; */
+  font-weight: 700;
+  margin: 0px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.titulos-condensados {
+  font-family: "Cabin Condensed", sans-serif;
+  font-size: 12px;
+  color: var(--naranja);
+  background-color: var(--violeta);
+  font-weight: 700;
+  margin: 0px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.titulos-condensados-blancos {
+  font-family: "Cabin Condensed", sans-serif;
+  font-size: 12px;
+  color: var(--blanco);
+  background-color: var(--violeta);
+  font-weight: 700;
+  margin: 0px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.my-scrollbar {
+  position: relative;
+  height: 500px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}

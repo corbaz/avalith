@@ -1,0 +1,26 @@
+#chat {
+  box-sizing: content-box;
+  box-shadow: none;
+  border-radius: 0px !important;
+  border: 0;
+
+  bottom: 80px !important;
+  right: 20px !important;
+
+  width: 69px;
+  height: 48px !important;
+
+  background: url(/icons/chat.png) center center;
+  background-position: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(0.9);
+  transition: .3s;
+
+  position: fixed;
+  z-index: 10001;
+}
+
+#chat:hover {
+  transform: scale(1);
+}

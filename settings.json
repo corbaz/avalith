@@ -1,0 +1,214 @@
+{
+	"javascript.implicitProjectConfig.experimentalDecorators": true,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"liveServer.settings.donotVerifyTags": true,
+	"files.autoSave": "onFocusChange",
+	"editor.minimap.enabled": false,
+	"explorer.confirmDelete": false,
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+	"explorer.confirmDragAndDrop": false,
+	"window.zoomLevel": 0,
+	"editor.formatOnType": true,
+	"php.validate.executablePath": "C:/laragon/bin/php/php-7.2.19-Win32-VC15-x64/php.exe",
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features",
+		"implicitProjectConfig.experimentalDecorators": true
+	},
+	"[php]": {
+		"editor.defaultFormatter": "junstyle.php-cs-fixer"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"terminal.integrated.rendererType": "dom",
+	"peacock.favoriteColors": [
+		{
+			"name": "Angular Red",
+			"value": "#b52e31"
+		},
+		{
+			"name": "Auth0 Orange",
+			"value": "#eb5424"
+		},
+		{
+			"name": "Azure Blue",
+			"value": "#007fff"
+		},
+		{
+			"name": "C# Purple",
+			"value": "#68217A"
+		},
+		{
+			"name": "Gatsby Purple",
+			"value": "#639"
+		},
+		{
+			"name": "Go Cyan",
+			"value": "#5dc9e2"
+		},
+		{
+			"name": "Java Blue-Gray",
+			"value": "#557c9b"
+		},
+		{
+			"name": "JavaScript Yellow",
+			"value": "#f9e64f"
+		},
+		{
+			"name": "Mandalorian Blue",
+			"value": "#1857a4"
+		},
+		{
+			"name": "Node Green",
+			"value": "#215732"
+		},
+		{
+			"name": "React Blue",
+			"value": "#00b3e6"
+		},
+		{
+			"name": "Something Different",
+			"value": "#832561"
+		},
+		{
+			"name": "Vue Green",
+			"value": "#42b883"
+		}
+	],
+	"editor.tabSize": 2,
+	"peacock.affectStatusBar": true,
+	"peacock.affectActivityBar": true,
+	"editor.renderWhitespace": "all",
+	"editor.renderControlCharacters": true,
+	"editor.multiCursorModifier": "alt",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.fontFamily": "Operator Mono",
+	"editor.fontLigatures": true,
+	"terminal.integrated.fontFamily": "monospace",
+	"editor.fontWeight": "500",
+	"editor.suggestSelection": "first",
+	"editor.fontSize": 20,
+	"liveServer.settings.host": "localhost",
+	"liveServer.settings.port": 5000,
+	"liveServer.settings.useBrowserPreview": false,
+	"sync.gist": "a6a9b05f2d1bb4dbc971bf1e7ea72450",
+	"sync.autoDownload": true,
+	"sync.autoUpload": true,
+	"sync.forceDownload": false,
+	"sync.quietSync": false,
+	"sync.askGistName": false,
+	"sync.removeExtensions": true,
+	"sync.syncExtensions": true,
+	"editor.mouseWheelZoom": true,
+	"editor.parameterHints.cycle": true,
+	"workbench.editor.highlightModifiedTabs": true,
+	"search.showLineNumbers": true,
+	"emmet.showSuggestionsAsSnippets": true,
+	"emmet.triggerExpansionOnTab": true,
+	"html-css-class-completion.enableEmmetSupport": true,
+	"vue-peek.targetFileExtensions": [".vue"],
+	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "?",
+			"color": "#3498DB",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "//",
+			"color": "#ffdd00",
+			"strikethrough": true,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "todo",
+			"color": "#FF8C00",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "*",
+			"color": "#98C379",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		}
+	],
+	"sync.forceUpload": true,
+	"workbench.colorCustomizations": {},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"vetur.format.defaultFormatter.js": "prettier-eslint",
+	"vetur.format.defaultFormatter.ts": "prettier-tslint",
+	"prettier.disableLanguages": [],
+	"dart.checkForSdkUpdates": true,
+	"editor.formatOnSaveTimeout": 1000,
+	"editor.formatOnPaste": true,
+	"prettier.useTabs": true,
+	"editor.largeFileOptimizations": false,
+	"todo-tree.highlights.enabled": false,
+	"files.autoSaveDelay": 300,
+	"commentbars.defaultFillChar": "*",
+	"git.autofetch": true,
+	"php-cs-fixer.executablePath": "${extensionPath}\\php-cs-fixer.phar",
+	"php-cs-fixer.lastDownload": 1586164653037,
+	"php-cs-fixer.allowRisky": true,
+	"php-cs-fixer.autoFixBySemicolon": true,
+	"php-cs-fixer.formatHtml": true,
+	"php-cs-fixer.onsave": true,
+	"editor.wordWrap": "on",
+	"files.associations": {
+		"*.html": "html"
+	},
+	"task.slowProviderWarning": ["npm"],
+	"liveServer.settings.wait": 1000,
+	"todo-tree.tree.showScanModeButton": false,
+	"editor.accessibilitySupport": "on",
+	"editor.columnSelection": false,
+	"breadcrumbs.enabled": true,
+	"html.format.endWithNewline": true,
+	"html.format.wrapLineLength": 80,
+	"editor.formatOnSave": true,
+	"[handlebars]": {
+		"editor.defaultFormatter": "alonski.prettier-for-handlebars-vscode"
+	},
+	"todohighlight.exclude": [
+		"**/node_modules/**",
+		"**/bower_components/**",
+		"**/dist/**",
+		"**/build/**",
+		"**/.vscode/**",
+		"**/.github/**",
+		"**/_output/**",
+		"**/*.min.*",
+		"**/*.map",
+		"**/.next/**"
+	],
+	"todohighlight.include": [
+		"**/*.js",
+		"**/*.jsx",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.html",
+		"**/*.hbs",
+		"**/*.php",
+		"**/*.css",
+		"**/*.scss"
+	]
+}

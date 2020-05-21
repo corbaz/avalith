@@ -1,0 +1,92 @@
+html,
+body {
+	background: url(https://www.tutorix.com/images/bg.jpg) no-repeat top;
+	height: 100%;
+	font-family: "Roboto Slab", sans-serif;
+	background-size: cover;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	overflow-x: hidden;
+}
+html,
+body,
+input,
+textarea,
+button {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/* rightbar overlay */
+.leftbar-icon {
+	font-size: 16px;
+	color: #333;
+	background: #000000;
+	position: absolute;
+	right: 0px;
+	padding: 5px 15px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	cursor: pointer;
+}
+.leftbar-icon1 {
+	color: white;
+	background: red;
+	top: 8%;
+	z-index: 9001;
+}
+.leftbar-icon2 {
+	color: black;
+	background: yellow;
+	top: 12%;
+	z-index: 9001;
+}
+.leftbar-icon3 {
+	color: white;
+	background: green;
+	top: 16%;
+	z-index: 9001;
+}
+.leftbar {
+	display: block;
+	height: 0%;
+	width: 100%;
+	position: fixed;
+	z-index: 9000;
+	top: 0;
+	left: 0;
+	/* background-color: red; */
+	overflow-y: hidden;
+	transition: 0.5s;
+}
+.leftbar-content {
+	position: relative;
+	top: 0;
+	width: 75%;
+	text-align: center;
+	height: 0%;
+}
+.leftbar .closebtn {
+	position: absolute;
+	color: #fafafa;
+	top: 20px;
+	right: 45px;
+	font-size: 40px;
+}
+.leftbar-content img {
+	box-shadow: 0px 2px 30px #1b1b1b;
+	border-radius: 20px;
+}
+@media screen and (max-height: 450px) {
+	.leftbar {
+		overflow-y: auto;
+	}
+	.leftbar a {
+		font-size: 20px;
+	}
+	.leftbar .closebtn {
+		font-size: 40px;
+		top: 15px;
+		right: 35px;
+	}
+}
+/* end of rightbar overlay */

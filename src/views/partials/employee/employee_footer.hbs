@@ -1,0 +1,27 @@
+<div class="card-body intro-text tinta p-3">
+  <hr />
+  {{#each botones}}
+    <div class="btn-group" style="float: none">
+      {{#if tipo_link}}
+        {{!link}}
+        <a
+          id={{id}}
+          type={{type}}
+          class="btn btn-outline-{{color}} btn-rounded waves-effect tinta"
+          href={{link}}
+        >
+          {{nombre}}
+        </a>
+      {{else}}
+        {{!Button}}
+        <button
+          id={{id}}
+          type={{type}} "
+          class="btn btn-outline-{{color}} btn-rounded waves-effect tinta"
+        >
+          {{nombre}}
+        </button>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>

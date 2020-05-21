@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cabinet Notevibes</title>
+    <meta name="Description" content="Free Online Text to Speech Converter with natural sounding voices. Generate audio files (mp3) from text for your needs: essay reading, word pronounce training, Youtube narrations and etc.">
+   
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta charset="utf-8">
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script src="/auth/auth.js"></script> 
+
+    <!-- Font Awesome JS -->	
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    
+   
+ 
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="Free Text to Speech Online With Natural Voices" />
+	<meta property="og:image" content="https://storage.googleapis.com/notevibes/tts.png" />
+	<!-- <meta property="og:url" content=""/>
+
+	<meta property="og:site_name" content=""/> -->
+	<meta property="og:description" content="Convert Text to Speech at the mp3 format. Download it for free." />
+	<meta name="twitter:title" content="Free Text to Speech Online With Natural Voices" />
+	<meta name="twitter:image" content="https://storage.googleapis.com/notevibes/tts.png" />
+	
+	<link rel="shortcut icon" type="image/png" href="https://storage.googleapis.com/notevibes/favicon.ico" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5D84WC5');</script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+.language { width:130px}
+.english { display: inline; }
+.german { display: none; }
+.french { display: none; }
+.vietnamese { display: none; }
+
+</style>
+
+  <!-- Hotjar Tracking Code for https://notevibes.com/ -->
+
+   
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+ <div class="container-fluid" style="margin-top: 20px;"> 
+  <a class="navbar-brand" href="https://notevibes.com/" style="font-size:32px;">Notevibes</a>
+  <form class="form-inline">
+     <span class = english>  <a href="https://notevibes.com/history.html" style="font-size:20px;margin-right:20px;color:white!important">Your Mp3 files</a></span>
+ <span class = german>  <a href="https://notevibes.com/history.html" style="font-size:20px;margin-right:20px;color:white!important">Ihre MP3-Dateien</a></span>
+   <span class = vietnamese><a href="https://notevibes.com/history.html" style="font-size:20px;margin-right:20px;color:white!important">Tập tin Mp3 của bạn</a></span>
+   <span class =french><a href="https://notevibes.com/history.html" style="font-size:20px;margin-right:20px;color:white!important">Vos fichiers MP3</a></span>
+
+ <div class="btn btn-danger navbar-btn">
+   <span class = english> <a href="https://notevibes.com/pricing.html">Pricing</a> </span>
+    <span class = german><a href="https://notevibes.com/pricing.html">Preis</a></span>
+   <span class = vietnamese><a href="https://notevibes.com/pricing.html">Giá cả</a></span>
+      <span class = french><a href="https://notevibes.com/pricing.html">Tarification</a></span>
+
+   
+   </div>
+
+ <div class="language">
+
+<select id="select">
+     <option id="english" value="english" selected>English</option>
+    <option id="german" value="german" >German</option>
+    <option id="vietnamese" value="vietnamese">Vietnamese</option>
+        <option id="french" value="french">French</option>
+
+</select>
+</div>
+  </form>
+ </div>
+ </nav>                                    
+                                    
+
+
+      
+
+
+
+
+
+
+ 
+                 
+
+
+   
+          
+
+ 
+       
+
+
+
+   
+   
+   
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D84WC5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <div class="container-fluid" style="margin-top:15px;"> 
+<div class="container-fluid" style="background-color:#f4f6ff;box-shadow: 0 0 15px #cfcbd6;">  
+<div class="row justify-content-between" style="padding-bottom:10px">
+ <div class="col-6">
+ <div class="btn btn-success btn-lg loat-left" style="margin-top: 10px;">
+ 
+      <span class = english>  <a href="refill.html">Refill Balance</a></span>
+ <span class = german> <a href="refill.html">Balance auffüllen</a></span>
+   <span class = vietnamese> <a href="refill.html">Số dư nạp lại</a></span>
+        <span class = french> <a href="refill.html">Solde de recharge</a></span>
+  
+       
+       </div>
+     </div>
+     
+    <div class="col-6" style="padding-top:10px;text-align:right" >
+    <div id="checkbox-container" style="display:inline-flex">
+    
+    <span class= english style="font-size: 18px;padding-top: 2px;padding-right: 5px;">Advanced editor</span>
+    <span class= german style="font-size: 18px;padding-top: 2px;padding-right: 5px;">Erweiterter Editor</span>
+    <span class= vietnamese style="font-size: 18px;padding-top: 2px;padding-right: 5px;">Biên tập nâng cao</span>
+    <span class= french style="font-size: 18px;padding-top: 2px;padding-right: 5px;">Éditeur avancé</span>
+
+
+<div id = "sub_status"></div>
+  <label class="switch" for="box">
+    <input type="checkbox" id="box" />
+    <div class="slider round"></div>
+  </label>
+
+  
+
+
+</div>
+</div>  
+
+</div>  
+
+<p id="text" style="font-size: 2rem;text-align:center;margin-top:10px"></p>
+ <div id="block" >
+
+
+  <div class="row text-center" id="ssmlmenu" style="display:none">
+<div class="btn-group dropright">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" data-toggle-second="tooltip" data-placement="top" title="Insert pause on cursor place" aria-haspopup="true" aria-expanded="false">
+    <span class = english>Pauses</span>
+ <span class = german>Pausen</span>
+   <span class = vietnamese>Tạm dừng</span>
+ <span class = french>la pause</span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+    <button class="dropdown-item" type="button" id=half>0,5s</button>
+    <button class="dropdown-item" type="button" id=one>1s</button>
+    <button class="dropdown-item" type="button" id=two>2s</button>
+    <button class="dropdown-item" type="button" id=three>3s</button>
+    <button class="dropdown-item" type="button" id=four>4s</button>
+    <button class="dropdown-item" type="button" id=five>5s</button>
+    <button class="dropdown-item" type="button" id=six>6s</button>
+ 	 </div>
+    </div>
+    
+  <div class="btn-group dropright">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" data-toggle-second="tooltip" data-placement="top" title="Tag words or sentence at textarea" aria-haspopup="true" aria-expanded="false">
+
+    <span class = english>Emphasis</span>
+ <span class = german>Betonung</span>
+   <span class = vietnamese>Nhấn mạnh</span>
+     <span class = french>Accentuation</span>
+  </button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu3">
+    <button class="dropdown-item" type="button" id=strong>Strong</button>
+    <button class="dropdown-item" type="button" id=moderate>Moderate</button>
+    <button class="dropdown-item" type="button" id=reduced>Reduced</button>
+ 
+  </div>
+   </div>
+   
+   <div class="btn-group dropright">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" data-toggle-second="tooltip" data-placement="top" title="Tag words or sentence at textarea" aria-haspopup="true" aria-expanded="false">
+
+    <span class = english>Volume</span>
+ <span class = german>Volumen</span>
+   <span class = vietnamese>Âm lượng</span>
+    <span class = french>Le volume</span>
+  </button>
+   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu4">
+    <button class="dropdown-item" type="button" id=x-soft>x-soft</button>
+    <button class="dropdown-item" type="button" id=soft>Soft</button>
+    <button class="dropdown-item" type="button" id=medium>Medium</button>
+    <button class="dropdown-item" type="button" id=loud>Loud</button>
+    <button class="dropdown-item" type="button" id=x-loud>x-Loud</button>
+  </div>
+
+</div>
+   <div class="btn-group dropright">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" data-toggle-second="tooltip" data-placement="top" title="Tag words at textarea" aria-haspopup="true" aria-expanded="false">
+
+  <span class = english>Say as</span>
+ <span class = german>Sprich als</span>
+   <span class = vietnamese>Nói như</span>
+    <span class = french>Dites comme</span>
+  </button>
+   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu5">
+    <button class="dropdown-item" type="button" id=spell-out>Spell-out</button>
+    <button class="dropdown-item" type="button" id=cardinal>Cardinal</button>
+    <button class="dropdown-item" type="button" id=ordinal>Ordinal</button>
+    <button class="dropdown-item" type="button" id=digits>Digits</button>
+
+  </div>
+
+</div>
+</div>
+<script>
+$('[data-toggle-second="tooltip"]').tooltip();
+function juko() { 
+  console.log($("#formu > input").html());
+}
+</script>
+
+
+  <form id="formu" action="javascript:juko()" method="get" style="display: contents;">
+     
+ 
+     
+     
+   <textarea id="subject" maxlength="9900" name="content" placeholder="Paste Text Here or Write something.." style="height:300px;width: 100%;" >
+ Este doodle, publicado en 2017, celebr&oacute; el 44&deg; aniversario del nacimiento del Hip Hop. Es el noveno doodle que publica Google</textarea>  <span class="hint" id="textarea_message">
+</span>	
+
+<input name="time" value="1588940164"> 
+<input  name="casestatus" id="casestatus" > 
+<input name="engine" id="engine" value="engine"> 
+<script>
+
+$('textarea#subject').on('keyup',function() 
+{
+  var maxlen = $(this).attr('maxlength');
+  
+  var length = $(this).val().length;
+  if(length > (maxlen-10) ){
+    $('#textarea_message').text('Max text length '+maxlen+' characters! Please split your text into smaller parts.')
+  }
+  else
+    {
+      $('#textarea_message').text('');
+    }
+});
+
+ </script>
+
+
+     <div class="container-fliud" style="padding-left:80px;">
+  <div id="sometimesHidden" style="display:none">
+          <div class="row" style="display:unset;height:80px">
+    
+    <span class = english>Profile</span>
+ <span class = german>Profil</span>
+   <span class = vietnamese>Hồ sơ</span>
+   <span class =french>Le Profil</span>
+   
+<select name="profile" id="profile" style="width:180px;">
+<option value="noprofile" selected="SELECTED">Default</option>
+<option value="telephony-class-application">IVR</option>
+<option value="medium-bluetooth-speaker-class-device">Smart home speaker</option>
+<option value="handset-class-device">Smartphone</option>
+<option value="large-automotive-class-device">Car speaker</option>
+<option value="headphone-class-device">Headphones </option>
+
+</select>
+
+ <!-- Pitch Label-->
+    <span class = english>Pitch</span>
+    <span class = german>Tonhöhes</span>
+   <span class = vietnamese>Sân cỏ</span>
+  <span class = french>le tangage</span>
+  
+   <!-- Pitch Label END -->
+   
+      <!-- Pitch Select start -->
+<select name="pitch" id="pitch" style="width:80px">
+
+<option value="0" selected="SELECTED">0</option>
+<option value="-3">-3</option>
+<option value="-5">-5</option>
+<option value="-10">-10</option>
+<option value="-15">-15</option>
+<option value="-20">-20</option>
+<option value="3">+3</option>
+<option value="5">+5</option>
+<option value="10">+10</option>
+<option value="15">+15</option>
+<option value="20" selected="selected">+20</option>
+</select>
+
+
+    <!-- Pitch Select end -->
+     <span class = english>Save as</span>
+    <span class = german>Speichern als</span>
+   <span class = vietnamese>Lưu thành</span>
+ <span class = french>Enregistrer sous</span>
+ 
+ 
+     <!-- SAVEAS Select start -->
+<select name="saveas" id="saveas" style="width:80px;">
+<option value="mp3" selected="SELECTED">MP3</option>
+<option value="wav" selected="selected">WAV</option>
+
+
+      </select>
+       <!-- SAVEAS Select end -->
+    
+    
+       <span class = english>  Speed</span>
+    <span class = german>Sprechtempo</span>
+   <span class = vietnamese>Tốc độ thoại</span>
+   <span class = french>Vitesse de la voix</span> 
+   
+<select name="speed" id="speed" style="width:120px;">
+
+<option value="1" selected="SELECTED">Standard</option>
+<option value="1.3">Faster</option>
+<option value="1.6">x-fast</option>
+ <option value="2">2xFast</option>
+<option value="0.8">Slow</option>
+<option value="0.6">x-Slow</option>
+<option value="0.3">2xSlow</option>
+ 
+</select> 
+<div id="warn" style="display:none">This voice doesn't support profile, pitch, save as, speed options and some SSML tags.
+</div>  
+</div>
+      
+</div>
+
+<style>
+div.warn{
+  display: none;
+}
+</style>
+    <div class="row" style="display:unset">
+      <span class = english>Select Voice</span>
+    <span class = german>Wählen Sie Voiceo</span>
+   <span class = vietnamese>Chọn giọng nói</span>
+    <span class = french>Sélectionnez la voix</span>
+
+
+
+
+
+<select name="voice" id="voice" style="width:220px">
+ <option id="google" selected="SELECTED" value="en-US-Wavenet-D">English(US) - David</option>
+
+<option id="google" value="en-US-Wavenet-A">English(US) -  Rick</option>
+<option id="google" value="en-US-Wavenet-B">English(US) - John</option>
+<option id="google" value="en-US-Wavenet-C">English(US) - Lucy</option>
+<option id="google" value="en-US-Wavenet-E">English(US) - Kate</option>
+<option id="google" value="en-US-Wavenet-F">English(US) - Rina</option>
+<option id="amazon" engine="neural" value="Matthew">English(US) -  Matthew </option>
+<option id="amazon" engine="neural" value="Joanna">English(US) - Joanna</option>
+<option id="amazon" engine="neural" value="Kendra">English(US) - Kendra</option>
+<option id="amazon" engine="neural" value="Kimberly">English(US) - Kimberly</option>
+<option id="amazon" engine="neural" value="Salli">English(US) - Salli</option>
+<option id="amazon" engine="neural" value="Joey">English(US) - Joey</option>
+<option id="amazon" engine="neural" value="Justin">English(US) - Justin(child)</option>
+<option id="amazon" engine="neural" value="Ivy">English(US) -  Ivy(child)</option>
+
+<option id="google" value="en-GB-Wavenet-D">English(UK) - Daniel</option>
+<option id="google" value="en-GB-Wavenet-B">English(UK) - Donald</option>
+<option id="google" value="en-GB-Wavenet-C">English(UK) - Gabriela</option>
+<option id="google" value="en-GB-Wavenet-A">English(UK) - Lola</option>
+<option id="amazon" engine="neural" value="Amy">English(UK) - Amy</option>
+<option id="amazon" engine="neural" value="Emma">English(UK) - Emma</option>
+<option id="amazon" engine="neural" value="Brian">English(UK) - Brian</option>
+
+
+<option id="google" value="en-AU-Wavenet-A">English(AU) - Kia</option>
+<option id="google" value="en-AU-Wavenet-B">English(AU) - William</option>
+<option id="google" value="en-AU-Wavenet-C">English(AU) - Olivia</option>
+<option id="google" value="en-AU-Wavenet-D">English(AU) -  Noah</option>
+<option id="amazon" engine="standard" value="Nicole">English(AU) - Nicole</option>
+<option id="amazon" engine="standard" value="Russell">English(AU) - Russell</option>
+
+
+<option id="google" value="en-IN-Wavenet-A">English(IN) - Pari</option>
+<option id="google" value="en-IN-Wavenet-B">English(IN) - Aditya</option>
+<option id="google" value="en-IN-Wavenet-C">English(IN) - Ansh</option>
+<option id="amazon" engine="standard" value="Aditi">English(IN) - Aditi</option>
+<option id="amazon" engine="standard" value="Raveena">English(IN) - Raveena</option>
+
+
+
+<option id="amazon" engine="neural" value="Lupe">Spanish(US) - Lupe</option>
+<option id="amazon" engine="standard" value="Penelope">Spanish(US) - Penelope</option>
+<option id="amazon" engine="standard" value="Miguel">Spanish(US) - Miguel</option>
+<option id="amazon" engine="standard" value="Conchita">Spanish(EU) - Conchita</option>
+<option id="amazon" engine="standard" value="Lucia">Spanish(EU) - Lucia</option>
+<option id="amazon" engine="standard" value="Enrique">Spanish(EU) -Enrique</option>
+<option id="amazon" engine="standard" value="Mia">Spanish - Mia</option>
+
+   
+<option id="google" value="de-DE-Wavenet-A">Deutsch - Anika</option>
+<option id="google" value="de-DE-Wavenet-B">Deutsch - Markus </option>
+<option id="google" value="de-DE-Wavenet-C">Deutsch - Arabella </option>
+<option id="google" value="de-DE-Wavenet-D">Deutsch - Gust </option>
+<option id="google" value="de-DE-Wavenet-E">Deutsch - Ben </option>
+<option id="google" value="de-DE-Wavenet-F">Deutsch - Emilia </option>
+<option id="amazon" engine="standard" value="Marlene">Deutsch - Marlene</option>
+<option id="amazon" engine="standard" value="Vicki">Deutsch - Vicki</option>
+<option id="amazon" engine="standard" value="Hans">Deutsch - Hans</option>
+
+
+
+<option id="google" value="fr-FR-Wavenet-A">French - Marie  </option>
+<option id="google" value="fr-FR-Wavenet-B">French - Thomas   </option>
+<option id="google" value="fr-FR-Wavenet-C">French - Chloé   </option>
+<option id="google" value="fr-FR-Wavenet-D">French - Julien  </option>
+<option id="google" value="fr-FR-Wavenet-E">French - Adrienne  </option>
+<option id="amazon" engine="standard" value="Celine">French - Celine</option>
+<option id="amazon" engine="standard" value="Lea">French - Lea</option>
+<option id="amazon" engine="standard" value="Mathieu">French - Mathieu</option>
+
+
+<option id="google" value="fr-CA-Wavenet-A">French(CA) - Samantha </option>
+<option id="google" value="fr-CA-Wavenet-B">French(CA)- Simon  </option>
+<option id="google" value="fr-CA-Wavenet-C">French(CA) - Jade  </option>
+<option id="google" value="fr-CA-Wavenet-D">French(CA) - Nicolas  </option>
+
+
+<option id="google" value="it-IT-Wavenet-A">Italian - Maria  </option>
+<option id="google" value="it-IT-Wavenet-B">Italian - Rosa </option>
+<option id="google" value="it-IT-Wavenet-C">Italian - Marco</option>
+<option id="google" value="it-IT-Wavenet-D">Italian - Stefano</option>
+<option id="amazon" engine="standard" value="Carla">Italian - Carla</option>
+<option id="amazon" engine="standard" value="Bianca">Italian - Bianca</option>
+<option id="amazon" engine="standard" value="Giorgio">Italian - Giorgio</option>
+
+
+
+<option id="google" value="nl-NL-Wavenet-A">Dutch(Nederland) - Bente  </option>
+<option id="google" value="nl-NL-Wavenet-B">Dutch - Adrianus  </option>
+<option id="google" value="nl-NL-Wavenet-C">Dutch - Dirk  </option>
+<option id="google" value="nl-NL-Wavenet-D">Dutch - Jade  </option>
+<option id="google" value="nl-NL-Wavenet-E">Dutch - Lara  </option>
+<option id="amazon" engine="standard" value="Lotte">Dutch - Lotte</option>
+<option id="amazon" engine="standard" value="Ruben">Dutch - Ruben</option>
+
+<option id="google" value="ja-JP-Wavenet-A">Japanese 日本語（日本) - Aika  </option>
+<option id="google" value="ja-JP-Wavenet-B">Japanese - Aki  </option>
+<option id="google" value="ja-JP-Wavenet-C">Japanese - Akemi  </option>
+<option id="google" value="ja-JP-Wavenet-D">Japanese - Akihiro </option>
+<option id="amazon" engine="standard" value="Mizuki">Japanese - Mizuki</option>
+<option id="amazon" engine="standard" value="Takumi">Japanese - Takumi</option>
+
+<option id="google" value="tr-TR-Wavenet-A">Turkish - Ayrıca  </option>
+<option id="google" value="tr-TR-Wavenet-B">Turkish - Adnan  </option>
+<option id="google" value="tr-TR-Wavenet-C">Turkish - Rüya  </option>
+<option id="google" value="tr-TR-Wavenet-D">Turkish - Ahu  </option>
+<option id="google" value="tr-TR-Wavenet-E">Turkish - Mustafa </option>
+
+
+
+<option id="google" value="ru-RU-WaveNet-A">Russian - Яна  </option>
+<option id="google" value="ru-RU-WaveNet-B">Russian - Денис </option>
+<option id="google" value="ru-RU-WaveNet-C">Russian - Алиса </option>
+<option id="google" value="ru-RU-WaveNet-D">Russian - Дима </option>
+<option id="google" value="ru-RU-WaveNet-E">Russian - Даша </option>
+<option id="amazon" engine="standard" value="Tatyana">Russian - Таня</option>
+<option id="amazon" engine="standard" value="Maxim">Russian - Макс</option>
+
+
+<option id="google" value="pt-PT-Wavenet-A">Portuguese - Carolina </option>
+<option id="google" value="pt-PT-Wavenet-B">Portuguese - Adriano </option>
+<option id="google" value="pt-PT-Wavenet-C">Portuguese - Afonso </option>
+<option id="google" value="pt-PT-Wavenet-D">Portuguese - Renata </option>
+<option id="google" value="pt-BR-Wavenet-A">Portuguese (BR) - Maria </option>
+<option id="amazon" engine="neural" value="Camila">Portuguese (BR) - Camila</option>
+<option id="amazon" engine="standard" value="Vitoria">Portuguese (BR) - Vitoria</option>
+<option id="amazon" engine="standard" value="Ricardo">Portuguese (BR) - Ricardo</option>
+<option id="amazon" engine="standard" value="Ines">Portuguese (EU) - Ines</option>
+<option id="amazon" engine="standard" value="Cristiano">Portuguese (EU) - Cristiano</option>
+
+
+
+<option id="google" value="pl-PL-Wavenet-A">Polish - Ada </option>
+<option id="google" value="pl-PL-Wavenet-B">Polish - Patryk </option>
+<option id="google" value="pl-PL-Wavenet-C">Polish - Tomek </option>
+<option id="google" value="pl-PL-Wavenet-D">Polish - Julia </option>
+<option id="google" value="pl-PL-Wavenet-E">Polish - Karolina </option>
+<option id="amazon" engine="standard" value="Ewa">Polish - Ewa</option>
+<option id="amazon" engine="standard" value="Maja">Polish - Maja</option>
+<option id="amazon" engine="standard" value="Jacek">Polish - Jacek</option>
+<option id="amazon" engine="standard" value="Jan">Polish - Jan</option>
+
+
+
+<option id="google" value="vi-VN-Wavenet-A">Vietnamese - Nguyen </option>
+<option id="google" value="vi-VN-Wavenet-B">Vietnamese- Huy </option>
+<option id="google" value="vi-VN-Wavenet-C">Vietnamese - My </option>
+<option id="google" value="vi-VN-Wavenet-D">Vietnamese - Van </option>
+
+<option id="google" value="ko-KR-Wavenet-A">Korean - Chaewon</option>
+<option id="google" value="ko-KR-Wavenet-B">Korean - Daeun </option>
+<option id="google" value="ko-KR-Wavenet-C">Korean - Dohyun </option>
+<option id="google" value="ko-KR-Wavenet-D">Korean - Jiho </option>
+
+<option id="google" value="id-ID-Wavenet-A">Indonesian - Putri</option>
+<option id="google" value="id-ID-Wavenet-B">Indonesian - Kevin </option>
+<option id="google" value="id-ID-Wavenet-C">Indonesian - Rio </option>
+<option id="google" value="id-ID-Wavenet-D">Indonesian - Dara </option>
+
+
+<option id="google" value="hi-IN-Wavenet-A">Hindi - Ananda</option>
+<option id="google" value="hi-IN-Wavenet-B">Hindi - Arnav </option>
+<option id="google" value="hi-IN-Wavenet-C">Hindi - Aditya </option>
+
+<option id="google" value="nb-no-Wavenet-E">Norwegian - Anna  </option>
+<option id="google" value="nb-no-Wavenet-A">Norwegian - Agot  </option>
+<option id="google" value="nb-no-Wavenet-B">Norwegian - Aksel  </option>
+<option id="google" value="nb-no-Wavenet-C">Norwegian - Ase </option>
+<option id="google" value="nb-no-Wavenet-D">Norwegian - Aleksander  </option>
+
+<option id="google" value="ar-XA-Wavenet-A">Arabic - Layla  </option>
+<option id="google" value="ar-XA-Wavenet-B">Arabic - Abbad   </option>
+<option id="google" value="ar-XA-Wavenet-C">Arabic - Adeel   </option>
+<option id="amazon" engine="standard" value="Zeina">Arabic  - Zeina</option>
+
+<option id="google" value="cmn-CN-Wavenet-A">Mandarin Chinese - Ah Cy  </option>
+<option id="google" value="cmn-CN-Wavenet-B">Mandarin Chinese - Chang  </option>
+<option id="google" value="cmn-CN-Wavenet-C">Mandarin Chinese - Bai  </option>
+<option id="google" value="cmn-CN-Wavenet-D">Mandarin Chinese - Yu Yan  </option>
+
+<option id="google" value="fil-PH-Wavenet-A">Philippines - Nicole </option>
+<option id="google" value="da-DK-Wavenet-A">Danish - Aase  </option>
+<option id="amazon" engine="standard" value="Naja">Danish  -Naja</option>
+<option id="amazon" engine="standard" value="Mads">Danish  - Mads</option>
+
+<option id="google" value="sv-SE-Wavenet-A">Swedish - Albin </option>
+<option id="google" value="cs-CZ-Wavenet-A">Czech - Ada </option>
+<option id="google" value="el-GR-Wavenet-A">Greece- Adonis </option>
+
+  </select>
+
+
+<script>
+ //hide selects for amazon
+$('#voice').change(function(e){
+ document.getElementById('warn').style.display = "none";
+if($(this).find(":selected").attr("id") == "amazon"){
+  
+  
+      $("#speed, #profile, #saveas, #pitch").prop('disabled',true);
+ document.getElementById('warn').style.display = "block";
+  document.getElementById('warn').style='color:red';
+}
+else 
+     
+    $("#speed, #profile, #saveas, #pitch").prop('disabled',false);
+
+
+});
+
+
+
+</script>
+
+<script>
+$(function() {
+
+
+  $('#voice').change(function() {
+  
+     document.getElementById('engine').value= $('select[name="voice"] :selected').attr('engine');
+});
+});
+</script>
+
+<script>
+
+$(document).ready(function () {
+
+if(sessionStorage['switchcase']){
+var id = sessionStorage.getItem("switchcase");
+var v = sessionStorage.getItem("value");
+ document.getElementById('casestatus').value = id;
+
+$("#voice").val(v).change();
+}
+else
+{
+ document.getElementById('casestatus').value = 'google';
+
+}
+ $("#voice").on('change', function () {
+
+  var last = $(this).find(":selected").attr("id");
+  var value = $(this).find(":selected").val();
+  sessionStorage.setItem("switchcase", last);
+   sessionStorage.setItem("value", value);
+   document.getElementById('casestatus').value = last;
+  
+});
+});
+  
+
+</script>
+       
+  
+ <span class = english><input type="submit" value="Convert" style="font-size:x-large"></span>
+ <span class = german><input type="submit" value="Umrechnen" style="font-size:x-large"></span>
+ <span class = vietnamese><input type="submit" value="đổi" style="font-size:x-large"></span>
+  <span class = french><input type="submit" value="convertir" style="font-size:x-large"></span>
+
+</div>
+ </div>
+ 
+  </form>
+</div>
+</div>
+
+ 
+   <div class="container-fliud" style="background-color:#dbb4f959;margin-top: 10px;margin-bottom:10px;padding-top: 20px;text-align:center"> 
+<div class="row" style="padding-bottom: 15px;">
+
+    <div class="col-sm-6">
+    
+          <span class = english>  <h4>Listen mp3</h4></span>
+    <span class = german><h4>Hören Sie mp3</h4></span>
+   <span class = vietnamese><h4>Nghe mp3</h4></span>
+      <span class = french>  <h4>Écouter mp3</h4></span>
+      
+      
+     <audio controls >
+
+  <source src='https://notevibes.s3.us-east-2.amazonaws.com/-Este-doodle-publicado-en-2011588791077.mp3'>
+
+</audio>  </div>
+ <div class="col-sm-6">
+
+    <span class = english> <h4>Download file </h4></span>
+     <span class = german><h4>Download-Datei</h4></span>
+  <span class = vietnamese><h4> Tải tập tin</h4></span>
+    <span class = french><h4> Télécharger un fichier</h4></span>
+
+<script type="text/javascript">
+
+var link = "https://notevibes.s3.us-east-2.amazonaws.com/-Este-doodle-publicado-en-2011588791077.mp3";
+var filename = " Este doodle publicado en 201";
+var voice = "Penelope";
+</script>
+
+
+   <div class="btn btn-primary btn-lg" > <a href='https://notevibes.s3.us-east-2.amazonaws.com/-Este-doodle-publicado-en-2011588791077.mp3'> Download </a>	</div>
+
+
+    </div>
+     </div>
+   
+   
+   
+   
+ </div>
+
+   
+          <div class="container-fliud" style="background-color:#fbfbfb;margin-top: 10px;margin-bottom:10px;padding-top: 20px;text-align:center;font-size:18px;box-shadow: 0 0 10px #cfcbd6;">
+    <div class="row">
+    
+      <div class="col-6">
+        <span class = english>Your Balance:</span>
+ <span class = german>Dein Kontostand:</span>
+   <span class = vietnamese>Số dư của bạn:</span>
+     <span class = french>Votre solde:</span>
+   
+   <p id="balance" style="margin-right:40px"></p></div>
+    
+<div class="col-6"> Email: <p id="email" style="margin-right:70px"></p> </div>
+<p id="disp" style="display:none!important"></p>
+</div>
+    
+      <div class="row">
+        <div class="col-6">
+        
+            <span class = english>Usage:</span>
+ <span class = german>Verwendung:</span>
+   <span class = vietnamese>Sử dụng:</span>
+     <span class = french>Coutume:</span>
+         <p id="count" style="margin-right:40px"></p>
+ </div>
+
+
+        <script type="text/javascript">
+
+var sc = '128';
+
+var score = Number(sc);
+
+</script>
+
+ <div class="col-6">
+
+  <a href="#" id="signOut" style=color:red!important>Sign Out</a></div>
+      
+        </div>
+   
+          <div id="sign-in-status"></div>
+    <div id="sign-in"></div>
+  </div>
+
+ <!-- END div-->
+
+     </div>
+
+
+ <!-- END-->
+
+ <!-- Show/ hide toogle menu -->
+
+ <!--  Advanced editor stance remember -->
+
+      <!-- END Advanced editor stance remember -->
+<script>
+document.getElementById('signOut').addEventListener('click', function(event) {
+  firebase.auth().signOut();
+});
+</script>
+    </div>
+ 
+
+<script>
+
+
+$(document).ready(function () {
+    $('#box').change(function () {
+      $('#sometimesHidden').fadeToggle();
+    $('#ssmlmenu').fadeToggle();
+    $("#ssmlmenu").css({
+  'display': "inherit",
+'padding-bottom': '10px'
+});
+    });
+});
+	function onClickBox() {
+				let checked=$("#box").is(":checked");
+				localStorage.setItem("checked", checked);
+				
+			}
+			function onReady() {
+				
+				let checked="true"==localStorage.getItem("checked");
+		     var x = checked.toString();
+				if (x== 'false')
+				{
+				document.getElementById("sometimesHidden").style.display = "none";
+				document.getElementById("ssmlmenu").style.display = "none";
+				}
+				else
+				{
+				document.getElementById("sometimesHidden").style.display = "block";
+				document.getElementById("ssmlmenu").style = "display:inherit;padding-bottom:10px";
+				
+				}
+				
+				$("#box").prop('checked', checked);
+				$("#box").click(onClickBox);
+			}
+			$(document).ready(onReady);
+
+
+         
+</script>
+
+
+<script>
+function wrapText(elementID, openTag, closeTag) {
+    var textArea = $('#' + elementID);
+    var len = textArea.val().length;
+    var start = textArea[0].selectionStart;
+    var end = textArea[0].selectionEnd;
+    var selectedText = textArea.val().substring(start, end);
+    var replacement = openTag + selectedText + closeTag;
+    textArea.val(textArea.val().substring(0, start) + replacement + textArea.val().substring(end, len));
+}
+
+$('#half').click(function() {
+    wrapText("subject", "<break time='500ms'/>", ""); 
+});
+$('#one').click(function() {
+	 wrapText("subject", "<break time='1s'/>", ""); 
+});
+$('#two').click(function() {
+	 wrapText("subject", "<break time='2s'/>", ""); 
+});
+$('#three').click(function() {
+	 wrapText("subject", "<break time='3s'/>", ""); 
+});
+$('#four').click(function() {
+	 wrapText("subject", "<break time='4s'/>", ""); 
+});
+$('#five').click(function() {
+	 wrapText("subject", "<break time='5s'/>", ""); 
+});
+$('#six').click(function() {
+	 wrapText("subject", "<break time='6s'/>", ""); 
+});
+$('#moderate').click(function() {
+    wrapText("subject", "<emphasis level='moderate'>", "</emphasis>");
+});
+$('#strong').click(function() {
+    wrapText("subject", "<emphasis level='strong'>", "</emphasis>");
+});
+$('#reduced').click(function() {
+    wrapText("subject", "<emphasis level='reduced'>", "</emphasis>");
+});
+
+$('#x-soft').click(function() {
+    wrapText("subject", "<prosody volume='x-soft'>", "</prosody>");
+});
+$('#soft').click(function() {
+    wrapText("subject", "<prosody volume='soft'>", "</prosody>");
+});
+$('#medium').click(function() {
+    wrapText("subject", "<prosody volume='medium'>", "</prosody>");
+});
+$('#loud').click(function() {
+    wrapText("subject", "<prosody volume='loud'>", "</prosody>");
+});
+$('#x-loud').click(function() {
+    wrapText("subject", "<prosody volume='x-loud'>", "</prosody>");
+});
+
+$('#spell-out').click(function() {
+    wrapText("subject", "<say-as interpret-as='spell-out'>", "</say-as>");
+});
+$('#cardinal').click(function() {
+    wrapText("subject", "<say-as interpret-as='cardinal'>", "</say-as>");
+});
+$('#ordinal').click(function() {
+    wrapText("subject", "<say-as interpret-as='ordinal'>", "</say-as>");
+});
+$('#digits').click(function() {
+    wrapText("subject", "<say-as interpret-as='digits'>", "</say-as>");
+});
+</script>
+       <script src="/auth/switcher.js"></script> 
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h4 class="text">About Notevibes</h4>
+          <p style=font-size:18px>Notevibes.com - text to speech converter with natural sounding voices. Free mp3 download.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+      
+             
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h4 class="text">Menu</h4>
+
+            <ul class="list-unstyled">
+    <li><a href="billing.html">Billing Settings</a></li>
+              <li>
+                <a href="pricing.html">Pricing</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact us</a>
+              </li>
+             
+           
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">   
+              <ul class="list-unstyled">
+<h4 class="text">Settings</h4>
+ <li><a href="https://notevibes.com/ssml.html" >SSML FAQ</a></li>
+ 
+      <li><a href="privacy.html">Refund</a></li>
+  <li>
+              <a href="https://notevibes.com/terms.html">Terms</a>
+              </li>
+                 <li>
+              <a href="https://notevibes.com/privacy.html">Privacy</a>
+              </li>
+ </ul>
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://notevibes.com"> Notevibes.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+</body>
+</html>
+
+
+  
+ 

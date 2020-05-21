@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JCC Producciones</title>
+
+		<!-- Favicon-->
+		<link rel="icon" type="image/x-icon" href="./public/img/favicon.ico" />
+
+		<!-- STYLES bootstrap-->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./public/css/bootstrap/bootstrap.css"
+		/>
+		<!-- Layout CSS -->
+		<link
+			id="theme-css"
+			rel="stylesheet"
+			type="text/css"
+			href="./public/assets/theme/theme-orange-v4.css"
+		/>
+		<link
+			id="layout-css"
+			rel="stylesheet"
+			type="text/css"
+			href="./public/assets/layout/css/layout-orange-v4.css"
+		/>
+		<link rel="stylesheet" href="./public/styles.css" />
+
+		<!-- font-awesome -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="./public/fonts/font-awesome.min.css"
+		/>
+
+		<link rel="stylesheet" type="text/css" href="./public/css/estilos.css" />
+
+		<!-- Refresh
+		 <meta http-equiv="refresh" content="0;url=http://localhost:5000/" /> 
+		-->
+
+		<!-- TODO Sintetizador_RESPONSIVE 
+		<script src="./public/js/responsivevoice_jcc.js"></script>	-->
+
+		<script src="https://code.responsivevoice.org/responsivevoice.js?key=xtNn9CYq"></script>
+	</head>
+	<body class="bg-white text-center text-white">
+		<main>
+			<div class="container">
+				<h1 class="text-danger" aria-label="JCC">
+					JCC Producciones
+				</h1>
+
+				<!-- TTS HTML -->
+				<div class="row p-2 btn-toolbar justify-content-center well">
+					<a
+						id="Sintetizador_HTML"
+						type="button"
+						class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 margin-left"
+						>TTS HTML
+					</a>
+					<span class="bg-white text-white">----</span>
+					<select id="Sintetizador_HTML_Voz" class="bg-white text-danger">
+						<option value="Microsoft Helena Desktop-Spanish (Spain)"
+							>0-Español Femenino Microsoft Helena</option
+						>
+						<option value="Microsoft Zira Desktop-English (United States)"
+							>1-Inglés Femenino Microsoft Zira (Estados Unidos)</option
+						>
+						<option value="Google Deutsch" selected
+							>2-Google Femenino Alemán</option
+						>
+						<option value="Google US English"
+							>3-Google Inglés Femenino (Estados Unidos)</option
+						>
+						<option value="Google UK English Female"
+							>4-Google Inglés Femenino (Reino Unido)</option
+						>
+						<option value="Google UK English Male"
+							>5-Google Inglés Masculino (Reino Unido)</option
+						>
+						<option value="Google español">6-Google Español Femenino</option>
+						<option value="Google español de Estados Unidos"
+							>7-Google Español Femenino (Estados Unidos)</option
+						>
+						<option value="Google français">8-Google Francés Femenino</option>
+						<option value="Google हिन्दी"
+							>9-Google Hindi Femenino (India)</option
+						>
+						<option value="Google Bahasa Indonesia"
+							>10-Google Bahasa Femenino (Indonesia)</option
+						>
+						<option value="Google italiano">11-Google Italiano Femenino</option>
+						<option value="Google 日本語"
+							>12-Google Japonés Femenino (日本語)</option
+						>
+						<option value="Google 한국의"
+							>13-Google Coreano Femenino (한국의)</option
+						>
+						<option value="Google Nederlands"
+							>14-Google Holandés Femenino</option
+						>
+						<option value="Google polski">15-Google Polaco Femenino</option>
+						<option value="Google português do Brasil"
+							>16-Google Portugués Femenino (Brasil)</option
+						>
+						<option value="Google русский"
+							>17-Google Ruso Femenino (русский)</option
+						>
+						<option
+							value="Google Mandarín (China continental) 普通话（中国大陆）"
+							>18-Google Mandarín Femenino (Chino) 普通话 (中国大陆)</option
+						>
+						<option value="Google 粤語（香港）"
+							>19-Google Cantonés Femenino (Hong Kong) 粤語 (香港)</option
+						>
+						<option value="Google 國語（臺灣）"
+							>20-Google Mandarín Femenino (Taiwán) 國語 (臺灣)</option
+						>
+					</select>
+				</div>
+
+				<!-- TTS RESPONSIVE -->
+				<div class="row p-2 justify-content-center">
+					<a
+						id="Sintetizador_RESPONSIVE"
+						type="button"
+						class="btn btn-danger btn-color btn-bg-color btn-sm col-xs-2 margin-left"
+						>TTS RESPONSIVE
+					</a>
+					<span class="bg-white text-white">----</span>
+					<select id="Select_Responsive_Voz" class="bg-white text-danger">
+						<option value="UK English Female">UK English Female</option
+						><option value="UK English Male">UK English Male</option
+						><option value="US English Female">US English Female</option
+						><option value="US English Male">US English Male</option
+						><option value="Arabic Male">Arabic Male</option
+						><option value="Arabic Female">Arabic Female</option
+						><option value="Armenian Male">Armenian Male</option
+						><option value="Australian Female">Australian Female</option
+						><option value="Australian Male">Australian Male</option
+						><option value="Bangla Bangladesh Female"
+							>Bangla Bangladesh Female</option
+						><option value="Bangla Bangladesh Male"
+							>Bangla Bangladesh Male</option
+						><option value="Bangla India Female">Bangla India Female</option
+						><option value="Bangla India Male">Bangla India Male</option
+						><option value="Brazilian Portuguese Female"
+							>Brazilian Portuguese Female</option
+						><option value="Chinese Female">Chinese Female</option
+						><option value="Chinese Male">Chinese Male</option
+						><option value="Chinese (Hong Kong) Female"
+							>Chinese (Hong Kong) Female</option
+						><option value="Chinese (Hong Kong) Male"
+							>Chinese (Hong Kong) Male</option
+						><option value="Chinese Taiwan Female">Chinese Taiwan Female</option
+						><option value="Chinese Taiwan Male">Chinese Taiwan Male</option
+						><option value="Czech Female">Czech Female</option
+						><option value="Danish Female">Danish Female</option
+						><option value="Deutsch Female">Deutsch Female</option
+						><option value="Deutsch Male">Deutsch Male</option
+						><option value="Dutch Female">Dutch Female</option
+						><option value="Dutch Male">Dutch Male</option
+						><option value="Estonian Male">Estonian Male</option
+						><option value="Filipino Female">Filipino Female</option
+						><option value="Finnish Female">Finnish Female</option
+						><option value="French Female">French Female</option
+						><option value="French Male">French Male</option
+						><option value="French Canadian Female"
+							>French Canadian Female</option
+						><option value="French Canadian Male">French Canadian Male</option
+						><option value="Greek Female">Greek Female</option
+						><option value="Hindi Female">Hindi Female</option
+						><option value="Hindi Male">Hindi Male</option
+						><option value="Hungarian Female">Hungarian Female</option
+						><option value="Indonesian Female">Indonesian Female</option
+						><option value="Indonesian Male">Indonesian Male</option
+						><option value="Italian Female">Italian Female</option
+						><option value="Italian Male">Italian Male</option
+						><option value="Japanese Female">Japanese Female</option
+						><option value="Japanese Male">Japanese Male</option
+						><option value="Korean Female">Korean Female</option
+						><option value="Korean Male">Korean Male</option
+						><option value="Latin Male">Latin Male</option
+						><option value="Nepali">Nepali</option
+						><option value="Norwegian Female">Norwegian Female</option
+						><option value="Norwegian Male">Norwegian Male</option
+						><option value="Polish Female">Polish Female</option
+						><option value="Polish Male">Polish Male</option
+						><option value="Portuguese Female">Portuguese Female</option
+						><option value="Portuguese Male">Portuguese Male</option
+						><option value="Romanian Female">Romanian Female</option
+						><option value="Russian Female">Russian Female</option
+						><option value="Sinhala">Sinhala</option
+						><option value="Slovak Female">Slovak Female</option
+						><option value="Spanish Female">Spanish Female</option
+						><option value="Spanish Latin American Female"
+							>Spanish Latin American Female</option
+						><option value="Spanish Latin American Male"
+							>Spanish Latin American Male</option
+						><option value="Swedish Female">Swedish Female</option
+						><option value="Swedish Male">Swedish Male</option
+						><option value="Tamil Female">Tamil Female</option
+						><option value="Tamil Male">Tamil Male</option
+						><option value="Thai Female">Thai Female</option
+						><option value="Thai Male">Thai Male</option
+						><option value="Turkish Female">Turkish Female</option
+						><option value="Turkish Male">Turkish Male</option
+						><option value="Ukrainian Female">Ukrainian Female</option
+						><option value="Vietnamese Female">Vietnamese Female</option
+						><option value="Vietnamese Male">Vietnamese Male</option
+						><option value="Afrikaans Male">Afrikaans Male</option
+						><option value="Albanian Male">Albanian Male</option
+						><option value="Bosnian Male">Bosnian Male</option
+						><option value="Catalan Male">Catalan Male</option
+						><option value="Croatian Male">Croatian Male</option
+						><option value="Esperanto Male">Esperanto Male</option
+						><option value="Icelandic Male">Icelandic Male</option
+						><option value="Latvian Male">Latvian Male</option
+						><option value="Macedonian Male">Macedonian Male</option
+						><option value="Moldavian Female">Moldavian Female</option
+						><option value="Montenegrin Male">Montenegrin Male</option
+						><option value="Serbian Male">Serbian Male</option
+						><option value="Serbo-Croatian Male">Serbo-Croatian Male</option
+						><option value="Swahili Male">Swahili Male</option
+						><option value="Welsh Male">Welsh Male</option
+						><option value="Fallback UK Female">Fallback UK Female</option>
+					</select>
+				</div>
+
+				<!-- TTS RESPONSIVE HTML -->
+				<div class="row p-2 justify-content-center">
+					<div class="form-group">
+						<label for="texto_a_voz" class="text-danger" style="float: left;"
+							>Texto a Leer:
+						</label>
+						<input
+							required
+							autofocus
+							type="text"
+							class="form-control"
+							name="texto_a_voz"
+							id="Sintetizador_RESPONSIVE_HTML"
+							placeholder="Ingrese el Texto"
+						/>
+					</div>
+				</div>
+				<video
+					controls=""
+					autoplay=""
+					name="media"
+					style="width: 15px; height: 10px; border: 0px solid #000;"
+				>
+					<source
+						src="https://texttospeech.responsivevoice.org/v1/text:synthesize?text=Busco
+					financiamiento Te orientamos respecto de programas planes o
+					herramientas crediticias para que puedas obtener el financiamiento que
+					tu
+					emprendimiento&amp;lang=es-US&amp;engine=g3&amp;name=&amp;pitch=0.5&amp;rate=0.5&amp;volume=1&amp;key=xtNn9CYq&amp;gender=male"
+						type="audio/mpeg"
+					/>
+				</video>
+				<div class="row p-2 justify-content-center">
+					<div class="card text-dark mb-3 p-3">
+						<div class="card-block py-1">
+							<div class="form-group my-0">
+								<label for="exampleFormControlInput1">Voice:</label>
+								<div class="input-group">
+									<select
+										id="voice_selection"
+										name="responsive_voice"
+										class="custom-select"
+									>
+										<option value="UK English Female">UK English Female</option
+										><option value="UK English Male">UK English Male</option
+										><option value="US English Female">US English Female</option
+										><option value="US English Male">US English Male</option
+										><option value="Arabic Male">Arabic Male</option
+										><option value="Arabic Female">Arabic Female</option
+										><option value="Armenian Male">Armenian Male</option
+										><option value="Australian Female">Australian Female</option
+										><option value="Australian Male">Australian Male</option
+										><option value="Bangla Bangladesh Female"
+											>Bangla Bangladesh Female</option
+										><option value="Bangla Bangladesh Male"
+											>Bangla Bangladesh Male</option
+										><option value="Bangla India Female"
+											>Bangla India Female</option
+										><option value="Bangla India Male">Bangla India Male</option
+										><option value="Brazilian Portuguese Female"
+											>Brazilian Portuguese Female</option
+										><option value="Chinese Female">Chinese Female</option
+										><option value="Chinese Male">Chinese Male</option
+										><option value="Chinese (Hong Kong) Female"
+											>Chinese (Hong Kong) Female</option
+										><option value="Chinese (Hong Kong) Male"
+											>Chinese (Hong Kong) Male</option
+										><option value="Chinese Taiwan Female"
+											>Chinese Taiwan Female</option
+										><option value="Chinese Taiwan Male"
+											>Chinese Taiwan Male</option
+										><option value="Czech Female">Czech Female</option
+										><option value="Danish Female">Danish Female</option
+										><option value="Deutsch Female">Deutsch Female</option
+										><option value="Deutsch Male">Deutsch Male</option
+										><option value="Dutch Female">Dutch Female</option
+										><option value="Dutch Male">Dutch Male</option
+										><option value="Estonian Male">Estonian Male</option
+										><option value="Filipino Female">Filipino Female</option
+										><option value="Finnish Female">Finnish Female</option
+										><option value="French Female">French Female</option
+										><option value="French Male">French Male</option
+										><option value="French Canadian Female"
+											>French Canadian Female</option
+										><option value="French Canadian Male"
+											>French Canadian Male</option
+										><option value="Greek Female">Greek Female</option
+										><option value="Hindi Female">Hindi Female</option
+										><option value="Hindi Male">Hindi Male</option
+										><option value="Hungarian Female">Hungarian Female</option
+										><option value="Indonesian Female">Indonesian Female</option
+										><option value="Indonesian Male">Indonesian Male</option
+										><option value="Italian Female">Italian Female</option
+										><option value="Italian Male">Italian Male</option
+										><option value="Japanese Female">Japanese Female</option
+										><option value="Japanese Male">Japanese Male</option
+										><option value="Korean Female">Korean Female</option
+										><option value="Korean Male">Korean Male</option
+										><option value="Latin Male">Latin Male</option
+										><option value="Nepali">Nepali</option
+										><option value="Norwegian Female">Norwegian Female</option
+										><option value="Norwegian Male">Norwegian Male</option
+										><option value="Polish Female">Polish Female</option
+										><option value="Polish Male">Polish Male</option
+										><option value="Portuguese Female">Portuguese Female</option
+										><option value="Portuguese Male">Portuguese Male</option
+										><option value="Romanian Female">Romanian Female</option
+										><option value="Russian Female">Russian Female</option
+										><option value="Sinhala">Sinhala</option
+										><option value="Slovak Female">Slovak Female</option
+										><option value="Spanish Female">Spanish Female</option
+										><option value="Spanish Latin American Female"
+											>Spanish Latin American Female</option
+										><option value="Spanish Latin American Male"
+											>Spanish Latin American Male</option
+										><option value="Swedish Female">Swedish Female</option
+										><option value="Swedish Male">Swedish Male</option
+										><option value="Tamil Female">Tamil Female</option
+										><option value="Tamil Male">Tamil Male</option
+										><option value="Thai Female">Thai Female</option
+										><option value="Thai Male">Thai Male</option
+										><option value="Turkish Female">Turkish Female</option
+										><option value="Turkish Male">Turkish Male</option
+										><option value="Ukrainian Female">Ukrainian Female</option
+										><option value="Vietnamese Female">Vietnamese Female</option
+										><option value="Vietnamese Male">Vietnamese Male</option
+										><option value="Afrikaans Male">Afrikaans Male</option
+										><option value="Albanian Male">Albanian Male</option
+										><option value="Bosnian Male">Bosnian Male</option
+										><option value="Catalan Male">Catalan Male</option
+										><option value="Croatian Male">Croatian Male</option
+										><option value="Esperanto Male">Esperanto Male</option
+										><option value="Icelandic Male">Icelandic Male</option
+										><option value="Latvian Male">Latvian Male</option
+										><option value="Macedonian Male">Macedonian Male</option
+										><option value="Moldavian Female">Moldavian Female</option
+										><option value="Montenegrin Male">Montenegrin Male</option
+										><option value="Serbian Male">Serbian Male</option
+										><option value="Serbo-Croatian Male"
+											>Serbo-Croatian Male</option
+										><option value="Swahili Male">Swahili Male</option
+										><option value="Welsh Male">Welsh Male</option
+										><option value="Fallback UK Female"
+											>Fallback UK Female</option
+										>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- NG Card  -->
+				<!-- <div class="row p-2 justify-content-center"> -->
+				<div class="card">
+					<h1>Overlay Panel</h1>
+					<div class="ui-g">
+						<div class="ui-g-6">
+							<button
+								id="boton_foto"
+								label="Image"
+								pbutton=""
+								type="button"
+								class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+							>
+								<span class="ui-button-text ui-clickable">Image</span>
+							</button>
+							<p-overlaypanel id="p_foto" class="ng-tns-c18-275 d-none">
+								<!---->
+								<div
+									class="ng-trigger ng-trigger-animation ng-tns-c18-275 ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow ng-star-inserted ui-g-12"
+									style="
+										z-index: 1006;
+										top: 135px;
+										left: 0px;
+										transform: translateY(0px);
+										opacity: 1;
+									"
+								>
+									<div class="ui-overlaypanel-content">
+										<img
+											alt="Nature 1"
+											src="./public/img/celu.png"
+											class="ui-g-12"
+										/>
+									</div>
+									<!---->
+								</div>
+							</p-overlaypanel>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+
+				<!--Youtube Playlist 
+				<div class="row p-2 justify-content-center">
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/dr-vDIOw2As"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+						scrolling="yes"
+						marginheight="0"
+						marginwidth="0"
+						allowtransparency="true"
+					>
+					</iframe>
+				</div>
+				-->
+
+				<!-- Iframe speed-test 
+				<div class="row p-2 justify-content-center">
+					<iframe
+						src="https://www.speedcheckercdn.com/bsc3/html5/custom-skins/whatismyip/index.html?&amp;holdingPageUrl=https%3A%2F%2Fwww.whatismyip.com%2Finternet-speed-test%2F&amp;holdingPageOrigin=https%3A%2F%2Fwww.whatismyip.com&amp;userID=7053327&amp;licenseID=&amp;sc_location=XX&amp;serverType=php&amp;serverVersion=1&amp;hideResults=&amp;x=13623&amp;sc_skin=3whatismyip&amp;enableWebsockets=1&amp;forceSecureWebsockets=1&amp;getBestServerAndUserInfo=0&amp;getServerList=0&amp;sc_w=556.8000000000001&amp;sc_h=414&amp;handColor=0xFF9933&amp;borderColor=0xACACAC&amp;circleColor=0x000000&amp;bgColor=0xFFFFFF&amp;logoUrl="
+						scrolling="no"
+						width="556.8000000000001px"
+						height="414px"
+						marginheight="0"
+						marginwidth="0"
+						frameborder="0"
+						allowtransparency="true"
+					>
+					</iframe>
+				</div>
+				-->
+
+				<!-- TODO li element 
+				<div class="row p-2 justify-content-center">
+					<my-element></my-element>
+					<script type="module" src="./components/my-presentacion.js"></script>
+				</div>-->
+
+				<!-- TODO SCROLL-TOP -->
+				<a href="#" class="scroll-top" title="Ir arriba">
+					<i class="fa fa-arrow-up" aria-hidden="true"></i>
+				</a>
+
+				<!-- Go to www.addthis.com/dashboard to customize your tools
+				<script
+					type="text/javascript"
+					src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea9db9dd4e4a61a"
+				></script>
+				<div class="addthis_inline_share_toolbox"></div> 
+				-->
+
+				<!-- Go to www.addthis.com/dashboard to customize your tools 
+				<script
+					type="text/javascript"
+					src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ea9eb7f36612708"
+				></script>
+				-->
+
+				<!-- Go to www.addthis.com/dashboard to customize your tools 
+				<div class="addthis_inline_share_toolbox"></div>
+
+				<div class="row p-2 justify-content-center">
+					<img
+						src="./public/img/cube-dark.svg"
+						alt="cubo"
+						styles="cursor: zoom-in;"
+					/>
+				</div>
+				-->
+			</div>
+		</main>
+		<!-- SCRIPTS -->
+		<!-- Jquery -->
+		<script src="./public/js/bootstrap/jquery.min.js" charset="utf-8"></script>
+
+		<!-- popper -->
+		<script src="./public/js/bootstrap/popper.min.js" charset="utf-8"></script>
+
+		<!-- Bootstrap -->
+		<script
+			src="./public/js/bootstrap/bootstrap.min.js"
+			charset="utf-8"
+		></script>
+
+		<!-- Voice 
+		<script
+			src="https://code.responsivevoice.org/responsivevoice.js?key=YlAYx2wk"
+			charset="utf-8"
+		></script>
+		-->
+
+		<!-- My JQUERY -->
+		<script src="./public/js/my_jq.js" charset="utf-8"></script>
+	</body>
+</html>

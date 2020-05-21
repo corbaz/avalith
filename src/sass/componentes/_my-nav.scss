@@ -1,0 +1,148 @@
+@import "_root";
+$my_nav-background-color: $transparente;
+$my_nav-height: 60px;
+$my_nav-font-size: 14px;
+
+#my_nav {
+  height: $my_nav-height;
+  background-color: $my_nav-background-color;
+  font-size: $my_nav-font-size;
+}
+
+$my_brand-color: $blanco;
+$my_nav-font-size-brand: $my_nav-font-size * 2;
+
+#my_brand {
+  color: $my_brand-color;
+  font-weight: 700;
+  font-size: $my_nav-font-size-brand;
+}
+
+$my_brand-color-hover: $verde;
+
+#my_brand:hover {
+  color: $my_brand-color-hover;
+  font-weight: 700;
+}
+
+$my_boton-background-color: $verde;
+$my_boton-border: solid 2px $verde;
+
+#my_boton_menu {
+  background-color: $my_boton-background-color;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+  border: $my_boton-border;
+}
+
+#my_boton_menu span {
+  background-color: $my_boton-background-color;
+}
+
+$nav-item-link-background-color: $transparente;
+
+a.nav-link,
+li.nav-item {
+  background-color: $nav-item-link-background-color;
+  min-width: min-content;
+  max-width: max-content;
+  margin-left: auto;
+  padding: 2px;
+  border: 0px solid $blue;
+}
+
+kbd {
+  font-size: $my_nav-font-size;
+}
+
+$kbd-background-color: $negro;
+$kbd-color: $blanco;
+
+.kbd {
+  background-color: $kbd-background-color;
+  color: $kbd-color;
+}
+
+$kbd-background-color-hover: $verde;
+$kbd-color-hover: $kbd-color;
+
+.kbd:hover {
+  background-color: $kbd-background-color-hover;
+  color: $kbd-color-hover;
+}
+
+$menu_kbd-background-color: $violeta;
+$menu_kbd-color: $blanco;
+$menu_kbd_icono-color: $menu_kbd-background-color;
+
+.menu_kbd {
+  background-color: $menu_kbd-background-color;
+  color: $menu_kbd-color;
+}
+
+$menu_kbd-background-color-hover: $verde;
+$menu_kbd-color-hover: $blanco;
+
+.menu_kbd:hover {
+  background-color: $menu_kbd-background-color-hover;
+  color: $menu_kbd-color-hover;
+}
+
+#menu_employee {
+  text-align: left;
+  background-color: $violeta;
+  color: $blanco;
+}
+
+.dropdown-toggle::before,
+.dropdown-toggle::after {
+  color: $menu_kbd_icono-color;
+}
+
+$menu_kbd_icono-color-hover: $menu_kbd-background-color-hover;
+
+.dropdown-toggle:hover::before,
+.dropdown-toggle:hover::after {
+  color: $menu_kbd_icono-color-hover;
+}
+
+.dropdown-menu {
+  padding: 0px;
+  border: 0px;
+}
+
+$dropdown_item-background-color-hover: $transparente;
+
+.dropdown-item:hover {
+  background-color: $dropdown_item-background-color-hover;
+}
+
+$dropdown_menu_show_item-background-color: $transparente;
+
+.dropdown-menu.show,
+.dropdown-item {
+  background-color: $dropdown_menu_show_item-background-color;
+  min-width: min-content;
+  max-width: max-content;
+  margin-left: auto;
+  border: 0px solid $verde;
+  padding: 2px;
+}
+
+$sub_menu_kbd-background-color: $violeta;
+$sub_menu_kbd-color: $blanco;
+
+.sub_menu_kbd {
+  background-color: $sub_menu_kbd-background-color;
+  color: $sub_menu_kbd-color;
+}
+
+$sub_menu_kbd-background-color-hover: $verde;
+$sub_menu_kbd-color-hover: $blanco;
+
+.sub_menu_kbd:hover {
+  background-color: $sub_menu_kbd-background-color-hover;
+  color: $sub_menu_kbd-color-hover;
+}

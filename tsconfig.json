@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"outDir": "./dist",
+		"sourceMap": true,
+		"declaration": false,
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"typeRoots": ["./node_modules/@types", "./@types"],
+		"target": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"allowJs": false,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"pretty": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts", "test.ts", "src/public/sass"],
+	"types": ["node"]
+}

@@ -1,0 +1,27 @@
+<main
+  id={{title}}
+  class="masthead"
+  style="background-image:url('/img/intro-bg.jpg');"
+>
+  <div class="intro-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card text-center">
+            <div class="card-header">
+              <h3 class="m-0 tinta">
+                {{title}}
+              </h3>
+            </div>
+            <div class="card-body">{{!Formulario de Employee}}
+              <form action="/employee/alta" method="POST">
+                {{>employee/employee_formulario_registrar}}
+                {{>employee/employee_footer}}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

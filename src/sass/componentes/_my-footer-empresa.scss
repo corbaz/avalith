@@ -1,0 +1,30 @@
+@import "_root";
+
+.my_footer_empresa {
+  background-color: $transparente;
+  margin: 0 auto;
+  padding: 5px;
+  width: 100%;
+
+  font-family: "Source Sans Pro",
+    Arial,
+    sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+
+  display: inline-block !important;
+}
+
+.my_footer_empresa>a,
+.socialIcons>a {
+  margin: 0 10 !important;
+  text-decoration: none;
+  color: $blanco;
+}
+
+.my_footer_empresa>a:hover,
+.socialIcons>a:hover {
+  margin: 0 10 !important;
+  text-decoration: none;
+  color: $verde;
+}

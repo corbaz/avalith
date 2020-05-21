@@ -1,0 +1,40 @@
+$naranja: rgba(253, 87, 87, 0.5) !important;
+$sombra: $naranja;
+
+.contenedor_presentacion {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  margin-top: 150px;
+  background: $sombra;
+  transform: rotate(-30deg) skew(25deg) scale(0.8);
+  transition: 0.5s;
+}
+
+.contenedor_presentacion img {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: -240px;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.contenedor_presentacion:hover img:nth-child(4) {
+  transform: translate(160px, -160px);
+  opacity: 1;
+}
+
+.contenedor_presentacion:hover img:nth-child(3) {
+  transform: translate(120px, -120px);
+  opacity: 0.8;
+}
+
+.contenedor_presentacion:hover img:nth-child(2) {
+  transform: translate(80px, -80px);
+  opacity: 0.6;
+}
+
+.contenedor_presentacion:hover img:nth-child(1) {
+  transform: translate(40px, -40px);
+  opacity: 0.4;
+}

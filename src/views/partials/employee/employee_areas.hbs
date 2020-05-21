@@ -1,0 +1,21 @@
+          <div class="form-group">
+            <label for="employee_area" class="tinta" style="float: left;"
+              >Area de trabajo:
+            </label>
+            <select required 
+              name="employee_area" 
+              class="form-control"
+              title="Seleccione su Area de Trabajo.">
+              {{#each areas}}
+                <option value=
+                  {{#if this.disabled}} "" disabled
+                    {{else}} "{{this.area}}"
+                  {{/if}}
+
+                  {{#isSelected this.area  ../seleccionado}}{{/isSelected}}
+                  >
+                 {{this.area}}
+                </option>
+              {{/each}}
+            </select>
+          </div> 

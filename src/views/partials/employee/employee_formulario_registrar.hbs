@@ -1,0 +1,54 @@
+					<div class="form-group"> {{!email}}
+						<label for="employee_email" class="tinta" style="float: left;"
+								>Email:
+							</label>
+						<input required autofocus 
+							type="email"
+							name="employee_email"
+							class="form-control text-lowercase"
+							title="Ingrese su Email. - Ej:  xxxxx@gmail.com"
+							placeholder="Ingrese su Email. - Ej:  xxxxx@gmail.com" 
+							value={{registro.employee_email}}>
+					</div>
+					<div class="form-group">{{!pass}}
+						<label for="employee_pass" class="tinta" style="float: left;"
+							>Password:
+						</label>
+						<input required 
+							type="password"
+							name="employee_pass"
+							class="form-control text-lowercase"
+							title="Ingrese su Password Mín: 8 / Max: 20 caracteres"
+              placeholder="Ingrese su Password Mín: 8 / Max: 20 caracteres"
+							pattern="[a-z0-9]{8,20}"
+							value="{{registro.employee_pass}}">
+					</div>
+					{{> employee/employee_areas}} {{!areas}}
+					<div class="form-group">{{!apellido}}
+						<label for="employee_apellido" class="tinta" style="float: left;"
+							>Apellidos:
+						</label>
+						<input required 
+							type="text" 
+							name="employee_apellido"
+							class="form-control text-lowercase"
+							title="Ingrese su Apellido"
+							placeholder="Ingrese su Apellido"
+							{{!-- pattern="(?! |.* {2}).*[^ ]" --}}
+							pattern="[A-Za-z' áéíóúñÑ]{3,30}"
+							value="{{registro.employee_apellido}}">
+					</div>
+					<div class="form-group"> {{!nombre}}
+						<label for="employee_nombre" class="tinta" style="float: left;"
+							>Nombres:
+						</label>
+						<input required
+							type="text" 
+							name="employee_nombre"
+							class="form-control text-lowercase"
+							title="Ingrese sus Nombres"
+							placeholder="Ingrese sus Nombres"
+							{{!-- pattern="(?! |.* {2}).*[^ ]" --}}
+							pattern="[A-Za-z' áéíóúñÑ]{3,30}"
+							value="{{registro.employee_nombre}}">
+					</div>

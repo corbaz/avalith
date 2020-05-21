@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"jshint.options": {
+			"esversion": 6
+		},
+		"html.format.indentHandlebars": true,
+		"html.format.indentInnerHtml": true
+	}
+}

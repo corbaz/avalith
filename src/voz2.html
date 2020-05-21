@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="voz2.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="leftbar-icon leftbar-icon1" onclick="openNav1()">Home</div>
+		<div class="leftbar-icon leftbar-icon2" onclick="openNav2()">About</div>
+		<div class="leftbar-icon leftbar-icon3" onclick="openNav3()">Login</div>
+
+		<div id="myNav" class="leftbar" style="height: 100%;">
+			<a
+				href="javascript:void(0)"
+				class="closebtn"
+				onclick="closeNav()"
+				title="Close"
+				>×</a
+			>
+
+			<div id="content1" class="leftbar-content">
+				<a href="/"
+					><img
+						src="https://www.clarin.com/redaccionfiler/clarin/infografia/2020/sociedad/03/medidas-prevencion-coronavirus-dk.jpg"
+						title="Register for Free"
+						width="50%"
+						height="50%"
+				/></a>
+			</div>
+
+			<div id="content2" class="leftbar-content">
+				<a href="/"
+					><img
+						src="https://desarrolloweb.com/archivoimg/general/2556.jpg"
+						title="Register for Free"
+						width="70%"
+						height="70%"
+				/></a>
+			</div>
+
+			<div id="content3" class="leftbar-content">
+				<a href="/"
+					><img
+						src="https://miro.medium.com/max/1104/1*_cUX39iYjqtQgAIzXEkPGQ.png"
+						title="Register for Free"
+						width="30%"
+						height="30%"
+				/></a>
+			</div>
+		</div>
+		<script>
+			// if (typeof Storage !== "undefined") {
+			// 	localStorage.setItem(
+			// 		"covid_19_popup",
+			// 		+localStorage.getItem("covid_19_popup") + +1
+			// 	);
+			// 	var x = localStorage.getItem("covid_19_popup");
+			// 	if (x <= 5) {
+			// 		setTimeout(function () {
+			// 			openNav();
+			// 		}, 5000);
+			// 	}
+			// }
+
+			function openNav1() {
+				closeNav();
+				// document.getElementById("content2").style.height = "0%";
+				// document.getElementById("content3").style.height = "0%";
+				document.getElementById("content1").style.height = "100%";
+				document.getElementById("myNav").style.background =
+					"rgba(255, 0,0, 0.5)";
+				document.getElementById("myNav").style.height = "100%";
+			}
+			function openNav2() {
+				document.getElementById("content1").style.height = "0%";
+				document.getElementById("content3").style.height = "0%";
+				document.getElementById("content2").style.height = "100%";
+				document.getElementById("myNav").style.background =
+					"rgba(255,255, 0, 0.5)";
+
+				document.getElementById("myNav").style.height = "100%";
+			}
+			function openNav3() {
+				document.getElementById("content1").style.height = "0%";
+				document.getElementById("content2").style.height = "0%";
+				document.getElementById("content3").style.height = "100%";
+				document.getElementById("myNav").style.background =
+					"rgba( 0,128, 0, 0.5)";
+				document.getElementById("myNav").style.height = "100%";
+			}
+
+			function closeNav() {
+				document.getElementById("myNav").style.height = "0%";
+			}
+		</script>
+	</body>
+</html>

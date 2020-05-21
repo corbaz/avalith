@@ -1,0 +1,101 @@
+<header>
+  {{! Navbar }}
+  <nav
+    id="my_nav"
+    class="navbar navbar-expand-lg navbar-dark fixed-top"
+  >
+      {{! Menu Brand Challenge 2020 /2020 {{op_brand_title}}
+      <a id="my_brand" class="navbar-brand" href="{{op_brand_url}}">
+        <img src="/img/avalith.png" class="" alt=""/>
+      </a>
+      {{! Menu Boton Responsive }}
+      <button
+        id="my_boton_menu"
+        type="button"
+        class="navbar-toggler collapsed"
+        data-test="nav-mobile-icon"
+        data-target="#boton-responsive"
+        aria-controls="boton-responsive"
+        data-toggle="collapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        {{! <div class="icon-bar1" aria-expanded="false"> }}
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+        {{! </div> }}
+      </button>
+      <div id="boton-responsive" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav ml-auto mt-lg-0 text-right pt-2">
+          {{! Menu 01-Avalith / }}
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" href="{{op_01_url}}">
+              <kbd class="kbd">
+                {{op_01_title}}
+              </kbd>
+            </a>
+          </li>
+          {{! Menu 02-About /about}}
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" href="{{op_02_url}}">
+              <kbd class="kbd">
+                {{op_02_title}}
+              </kbd>
+            </a>
+          </li>
+          {{! Menu 03-Employee /employee}}
+          <li id="boton_employee" class="nav-item dropdown">
+            <a
+              id="link_boton_employee"
+              class="dropdown-toggle nav-link"
+              data-toggle="dropdown"
+              aria-expanded="false"
+              href="#"
+            >
+              <kbd class="menu_kbd">
+                {{op_03_title}}
+              </kbd>
+            </a>
+            <div id="menu_employee" class="dropdown-menu" role="menu">
+              <a class="dropdown-item" role="presentation" href="{{op_03_url}}">
+                <kbd class="sub_menu_kbd">
+                  Alta
+                </kbd>
+              </a>
+              <a class="dropdown-item" role="presentation" href="#">
+                <kbd class="sub_menu_kbd">
+                  Baja
+                </kbd>
+              </a>
+              <a class="dropdown-item" role="presentation" href="#">
+                <kbd class="sub_menu_kbd">
+                  Consulta
+                </kbd>
+              </a>
+              <a class="dropdown-item" role="presentation" href="#">
+                <kbd class="sub_menu_kbd">
+                  Modificacion
+                </kbd>
+              </a>
+            </div>
+          </li>
+          {{! Menu 04-Registrarse /registrar}}
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" href="{{op_04_url}}">
+              <kbd class="kbd">
+                {{op_04_title}}
+              </kbd>
+            </a>
+          </li>
+          {{! Menu 05-Login /login}}
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" href="#">
+              <kbd class="kbd">
+                {{op_05_title}}
+              </kbd>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

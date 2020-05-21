@@ -1,0 +1,531 @@
+<section>
+	<div
+		id="dtDynamicVerticalScrollExample_wrapper"
+		class="dataTables_wrapper dt-bootstrap4"
+	>
+		<div class="row">
+			<div class="col-sm-12 col-md-6"></div>
+			<div class="col-sm-12 col-md-6">
+				<div
+					id="dtDynamicVerticalScrollExample_filter"
+					class="dataTables_filter"
+				>
+					<label
+						>Search:<input
+							type="search"
+							class="form-control form-control-sm"
+							placeholder=""
+							aria-controls="dtDynamicVerticalScrollExample"
+					/></label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="dataTables_scroll">
+					<div
+						class="dataTables_scrollHead"
+						style="
+							overflow: hidden;
+							position: relative;
+							border: 0px;
+							width: 100%;
+						"
+					>
+						<div
+							class="dataTables_scrollHeadInner"
+							style="
+								box-sizing: content-box;
+								width: 717px;
+								padding-right: 17px;
+							"
+						>
+							<table
+								class="table table-striped table-bordered table-sm dataTable"
+								cellspacing="0"
+								width="100%"
+								role="grid"
+								style="margin-left: 0px; width: 717px;"
+							>
+								<thead>
+									<tr role="row">
+										<th
+											class="th-sm sorting_asc"
+											tabindex="0"
+											aria-controls="dtDynamicVerticalScrollExample"
+											rowspan="1"
+											colspan="1"
+											style="width: 123px;"
+											aria-sort="ascending"
+											aria-label="Name
+          : activate to sort column descending"
+										>
+											Name
+										</th>
+										<th
+											class="th-sm sorting"
+											tabindex="0"
+											aria-controls="dtDynamicVerticalScrollExample"
+											rowspan="1"
+											colspan="1"
+											style="width: 190px;"
+											aria-label="Position
+          : activate to sort column ascending"
+										>
+											Position
+										</th>
+										<th
+											class="th-sm sorting"
+											tabindex="0"
+											aria-controls="dtDynamicVerticalScrollExample"
+											rowspan="1"
+											colspan="1"
+											style="width: 103px;"
+											aria-label="Office
+          : activate to sort column ascending"
+										>
+											Office
+										</th>
+										<th
+											class="th-sm sorting"
+											tabindex="0"
+											aria-controls="dtDynamicVerticalScrollExample"
+											rowspan="1"
+											colspan="1"
+											style="width: 100px;"
+											aria-label="Age
+          : activate to sort column ascending"
+										>
+											Age
+										</th>
+										<th
+											class="th-sm sorting"
+											tabindex="0"
+											aria-controls="dtDynamicVerticalScrollExample"
+											rowspan="1"
+											colspan="1"
+											style="width: 100px;"
+											aria-label="Start date
+          : activate to sort column ascending"
+										>
+											Start date
+										</th>
+										<th
+											class="th-sm sorting"
+											tabindex="0"
+											aria-controls="dtDynamicVerticalScrollExample"
+											rowspan="1"
+											colspan="1"
+											style="width: 100px;"
+											aria-label="Salary
+          : activate to sort column ascending"
+										>
+											Salary
+										</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+					<div
+						class="dataTables_scrollBody"
+						style="
+							position: relative;
+							overflow: auto;
+							max-height: 20vh;
+							width: 100%;
+						"
+					>
+						<table
+							id="dtDynamicVerticalScrollExample"
+							class="table table-striped table-bordered table-sm dataTable"
+							cellspacing="0"
+							width="100%"
+							role="grid"
+							aria-describedby="dtDynamicVerticalScrollExample_info"
+							style="width: 100%;"
+						>
+							<thead>
+								<tr role="row" style="height: 0px;">
+									<th
+										class="th-sm sorting_asc"
+										aria-controls="dtDynamicVerticalScrollExample"
+										rowspan="1"
+										colspan="1"
+										style="
+											width: 123px;
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+										"
+										aria-sort="ascending"
+										aria-label="Name
+          : activate to sort column descending"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Name
+										</div>
+									</th>
+									<th
+										class="th-sm sorting"
+										aria-controls="dtDynamicVerticalScrollExample"
+										rowspan="1"
+										colspan="1"
+										style="
+											width: 190px;
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+										"
+										aria-label="Position
+          : activate to sort column ascending"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Position
+										</div>
+									</th>
+									<th
+										class="th-sm sorting"
+										aria-controls="dtDynamicVerticalScrollExample"
+										rowspan="1"
+										colspan="1"
+										style="
+											width: 103px;
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+										"
+										aria-label="Office
+          : activate to sort column ascending"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Office
+										</div>
+									</th>
+									<th
+										class="th-sm sorting"
+										aria-controls="dtDynamicVerticalScrollExample"
+										rowspan="1"
+										colspan="1"
+										style="
+											width: 100px;
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+										"
+										aria-label="Age
+          : activate to sort column ascending"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Age
+										</div>
+									</th>
+									<th
+										class="th-sm sorting"
+										aria-controls="dtDynamicVerticalScrollExample"
+										rowspan="1"
+										colspan="1"
+										style="
+											width: 100px;
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+										"
+										aria-label="Start date
+          : activate to sort column ascending"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Start date
+										</div>
+									</th>
+									<th
+										class="th-sm sorting"
+										aria-controls="dtDynamicVerticalScrollExample"
+										rowspan="1"
+										colspan="1"
+										style="
+											width: 100px;
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+										"
+										aria-label="Salary
+          : activate to sort column ascending"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Salary
+										</div>
+									</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr style="height: 0px;">
+									<th
+										rowspan="1"
+										colspan="1"
+										style="
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+											width: 123px;
+										"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Name
+										</div>
+									</th>
+									<th
+										rowspan="1"
+										colspan="1"
+										style="
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+											width: 190px;
+										"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Position
+										</div>
+									</th>
+									<th
+										rowspan="1"
+										colspan="1"
+										style="
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+											width: 103px;
+										"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Office
+										</div>
+									</th>
+									<th
+										rowspan="1"
+										colspan="1"
+										style="
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+											width: 100px;
+										"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Age
+										</div>
+									</th>
+									<th
+										rowspan="1"
+										colspan="1"
+										style="
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+											width: 100px;
+										"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Start date
+										</div>
+									</th>
+									<th
+										rowspan="1"
+										colspan="1"
+										style="
+											padding-top: 0px;
+											padding-bottom: 0px;
+											border-top-width: 0px;
+											border-bottom-width: 0px;
+											height: 0px;
+											width: 100px;
+										"
+									>
+										<div
+											class="dataTables_sizing"
+											style="height: 0px; overflow: hidden;"
+										>
+											Salary
+										</div>
+									</th>
+								</tr>
+							</tfoot>
+
+							<tbody>
+								<tr role="row" class="odd">
+									<td class="sorting_1">Airi Satou</td>
+									<td>Accountant</td>
+									<td>Tokyo</td>
+									<td>33</td>
+									<td>2008/11/28</td>
+									<td>$162,700</td>
+								</tr>
+								<tr role="row" class="even">
+									<td class="sorting_1">Ashton Cox</td>
+									<td>Junior Technical Author</td>
+									<td>San Francisco</td>
+									<td>66</td>
+									<td>2009/01/12</td>
+									<td>$86,000</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">Brielle Williamson</td>
+									<td>Integration Specialist</td>
+									<td>New York</td>
+									<td>61</td>
+									<td>2012/12/02</td>
+									<td>$372,000</td>
+								</tr>
+								<tr role="row" class="even">
+									<td class="sorting_1">Cedric Kelly</td>
+									<td>Senior Javascript Developer</td>
+									<td>Edinburgh</td>
+									<td>22</td>
+									<td>2012/03/29</td>
+									<td>$433,060</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">Garrett Winters</td>
+									<td>Accountant</td>
+									<td>Tokyo</td>
+									<td>63</td>
+									<td>2011/07/25</td>
+									<td>$170,750</td>
+								</tr>
+								<tr role="row" class="even">
+									<td class="sorting_1">Herrod Chandler</td>
+									<td>Sales Assistant</td>
+									<td>San Francisco</td>
+									<td>59</td>
+									<td>2012/08/06</td>
+									<td>$137,500</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">Rhona Davidson</td>
+									<td>Integration Specialist</td>
+									<td>Tokyo</td>
+									<td>55</td>
+									<td>2010/10/14</td>
+									<td>$327,900</td>
+								</tr>
+								<tr role="row" class="even">
+									<td class="sorting_1">Tiger Nixon</td>
+									<td>System Architect</td>
+									<td>Edinburgh</td>
+									<td>61</td>
+									<td>2011/04/25</td>
+									<td>$320,800</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div
+						class="dataTables_scrollFoot"
+						style="overflow: hidden; border: 0px; width: 100%;"
+					>
+						<div
+							class="dataTables_scrollFootInner"
+							style="width: 717px; padding-right: 17px;"
+						>
+							<table
+								class="table table-striped table-bordered table-sm dataTable"
+								cellspacing="0"
+								width="100%"
+								role="grid"
+								style="margin-left: 0px; width: 717px;"
+							>
+								<tfoot>
+									<tr>
+										<th rowspan="1" colspan="1" style="width: 123px;">Name</th>
+										<th rowspan="1" colspan="1" style="width: 190px;">
+											Position
+										</th>
+										<th rowspan="1" colspan="1" style="width: 103px;">
+											Office
+										</th>
+										<th rowspan="1" colspan="1" style="width: 100px;">Age</th>
+										<th rowspan="1" colspan="1" style="width: 100px;">
+											Start date
+										</th>
+										<th rowspan="1" colspan="1" style="width: 100px;">
+											Salary
+										</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-5">
+				<div
+					class="dataTables_info"
+					id="dtDynamicVerticalScrollExample_info"
+					role="status"
+					aria-live="polite"
+				>
+					Showing 1 to 8 of 8 entries
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-7"></div>
+		</div>
+	</div>
+</section>

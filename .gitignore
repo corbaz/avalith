@@ -1,0 +1,17 @@
+# ./dist
+dist
+
+# Modulos de Nodejs
+node_modules
+
+# npm
+package-lock.json
+
+# Variables de Entorno (environment)
+.env.development
+.env.production
+
+collection_employee.json
+
+# Archivos de MAC
+.DS_Store
