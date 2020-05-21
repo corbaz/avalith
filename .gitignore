@@ -16,5 +16,6 @@ collection_employee.json
 # Archivos de MAC
 .DS_Store
 
-src/public/assets/*
+# Executables
+src/public/assets/
 
