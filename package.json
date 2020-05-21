@@ -8,7 +8,7 @@
 		"gulp": "gulp",
 		"dev": "cross-env NODE_ENV=development ts-node-dev ./src/server.ts",
 		"git-add": "git add .",
-		"git-commit": "git commit -a -m 'Mensaje: '",
+		"git-commit": "git commit -m \"Mensaje: \"",
 		"git-remote": "git remote add origin https://github.com/corbaz/avalith.git'",
 		"git-push": "git push --set-upstream origin master",
 		"dist": "npm run build && npm run copyfiles &&  npm run start",
