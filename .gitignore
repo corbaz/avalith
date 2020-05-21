@@ -1,5 +1,7 @@
 # ./dist
 dist
+config
+.vscode
 
 # Modulos de Nodejs
 node_modules
