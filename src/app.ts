@@ -17,10 +17,7 @@ import { clase_my_helpers } from './views-helpers/my_helpers';
 /** Modulo dotenv. Carga variables de entorno de un archivo .env para process.env
  *  usando su metodo config() - Solamente en etapa de desarrollo
  */
-let MONGODB_HOST: string;
-let MONGODB_DB: string;
-let MONGODB_USER: string;
-let MONGODB_PASS: string;
+
 let MONGODB_URI: string;
 
 if (process.env.NODE_ENV === 'development') {
@@ -31,22 +28,15 @@ if (process.env.NODE_ENV === 'development') {
 	console.log(`Entorno de Ejecucion: ${process.env.NODE_ENV}`);
 	console.log(`Programador : ${process.env.PROGRAMADOR}`);
 
-	MONGODB_HOST = process.env.MONGODB_HOST;
-	MONGODB_DB = process.env.MONGODB_DB;
-	MONGODB_URI = `mongodb://${MONGODB_HOST}/${MONGODB_DB}`;
+	MONGODB_URI = `mongodb://${process.env.MONGODB_HOST}/${process.env.MONGODB_DB}`;
 }
 
 //	MONGODB_URI = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@clusterjcc-rrlah.mongodb.net/${MONGODB_DB}?retryWrites=true&w=majority`;
 if (process.env.NODE_ENV === 'production') {
-	dotenv.config({
-		path: path.join(__dirname, `../.env.${process.env.NODE_ENV}`),
-	});
 	console.log(`Entorno de Ejecucion: ${process.env.NODE_ENV}`);
 	console.log(`Programador : ${process.env.PROGRAMADOR}`);
 
-	MONGODB_HOST = process.env.MONGODB_HOST;
-	MONGODB_DB = process.env.MONGODB_DB;
-	MONGODB_URI = `mongodb://${MONGODB_HOST}/${MONGODB_DB}`;
+	MONGODB_URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@clusterjcc-rrlah.mongodb.net/${process.env.MONGODB_DB}?retryWrites=true&w=majority`;
 }
 
 class App {
@@ -149,12 +139,11 @@ class App {
 				serverSelectionTimeoutMS: 5000, // Timeout de 5s en lugar de 30s
 			})
 			.then(() =>
-				console.log(
-					`Conectado a MongoDB Atlas o localhost - ${this.mongodb_URI}`
-				)
+				console.log(`Conectado al Servidor de Base de Datos - ${this.mongodb_URI}
+				`)
 			)
 			.catch((err) =>
-				console.log('Error al connectar MongoDB Atlas o localHost', err)
+				console.log('Error al connectar al Servidor de Base de Datos - ', err)
 			);
 	}
 }

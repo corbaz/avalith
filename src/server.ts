@@ -10,7 +10,8 @@ app.set('host', process.env.HOST || '0.0.0.0');
 app.set('port', process.env.PORT);
 
 app.listen(app.get('port'), app.get('host'), () => {
-	console.log(`
-	Servidor Express corriendo en el port ${app.get('port')}
+	console.log(`Servidor Express corriendo en el HOST: ${app.get(
+		'host'
+	)} y en el PORT: ${app.get('port')}
 	`);
 });
